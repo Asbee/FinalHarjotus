@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Game.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Game"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="LightBlue"
+    >
+
+
+    <Grid         
+         Height="600"
+            Width="1200"                      
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="LightBlue"
+        x:Name="MyGrid"
+             >
+
+
+        <Image Stretch="Fill" 
+        Source="Assets/Background.png" 
+        VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="-10,-67,9,0"/>
+        <Button x:Name="Burger" Content="Burger&#xA;" Width="84" Height="121" Margin="510,206,0,273" Click="Burger_Click" />
+        <Button x:Name="House" Content="House;" Width="105" Height="121" Margin="10,206,0,273" Click="House_Click" />
+
+
+    </Grid>
+</Page>
