@@ -14,35 +14,11 @@ namespace Game.Player
         public bool PFood { get; set; }
         public string PItems { get; set; }
 
-
-
-
-
         public int PMoney;
-
-        public int PScore
-        {
-            get
-            {
-                return PScore;
-            }
-            set
-            {
-                PScore = 0;
-            }
-        }
-        public int PHappiness
-        {
-            get
-            {
-                return PHappiness;
-            }
-            set
-            {
-                PHappiness = 0;
-            }
-        }
+        public int PScore;
+        public int PHappiness;   
         public int PTime = 50;
+        public int PEducation = 0;
 
         //Metodit
         public void Work(int value, int time)
@@ -56,6 +32,14 @@ namespace Game.Player
         public void Buy(int value)
         {
             PMoney -= value;
+        }
+        public void Education ()
+        {
+            PEducation++;
+        }
+        public void Relax(int relax)
+        {
+            PHappiness =+ relax;
         }
 
     }

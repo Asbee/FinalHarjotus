@@ -20,6 +20,12 @@ namespace Game.Buildings
 {
     public sealed partial class House : UserControl
     {
+        Player.Player1 player = new Player.Player1();
+        
+        int Happiness = 15;
+        int time = 5;
+        
+
         public House()
         {
             this.InitializeComponent();

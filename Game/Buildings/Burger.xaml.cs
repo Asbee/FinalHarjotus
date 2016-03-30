@@ -49,22 +49,9 @@ namespace Game.Buildings
             Grid grid = (Grid)Parent;
             grid.Children.Remove(this);
         }
-
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
-
-        private void WorkButton_Click(object sender, RoutedEventArgs e)
-        {
-            player.Work(work, time);
-            
-            
+            player.Work(work, time);            
         }
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)

@@ -19,6 +19,9 @@ namespace Game.Buildings
 {
     public sealed partial class University : UserControl
     {
+        Player.Player1 player = new Player.Player1();
+
+
         public University()
         {
             this.InitializeComponent();
@@ -35,7 +38,7 @@ namespace Game.Buildings
         }
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-
+            player.Education();
         }
     }
 }

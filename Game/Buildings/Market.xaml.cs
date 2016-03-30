@@ -19,6 +19,18 @@ namespace Game.Buildings
 {
     public sealed partial class Market : UserControl
     {
+        Player.Player1 player = new Player.Player1();
+
+
+        //Aika ja Työ arvot
+        int money = 15;
+        int time = 10;
+        //Hinnat
+        int pinaatti = 20;
+        int banaani = 5;
+        int makarooni = 15;
+
+
         public Market()
         {
             this.InitializeComponent();
@@ -31,11 +43,11 @@ namespace Game.Buildings
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-
+            player.Buy(pinaatti);
         }
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-
+            player.Work(money, time);
         }
     }
 }
