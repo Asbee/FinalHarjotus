@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Game.Player;
+using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -19,9 +21,18 @@ namespace Game.Buildings
 {
     public sealed partial class Burger : UserControl
     {
+        
+        Player1 player = new Player1();
+        int burgerointi = 20;
+        int work = 20;
+        int time = 10;
+
+        
         public Burger()
         {
             this.InitializeComponent();
+            
+            
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -38,6 +49,18 @@ namespace Game.Buildings
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void WorkButton_Click(object sender, RoutedEventArgs e)
+        {
+            player.Work(work, time);
+            
+            
+        }
+
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+            player.Buy(burgerointi);
         }
     }
 }
