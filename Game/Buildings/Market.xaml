@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="Game.Buildings.Market"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Game.Buildings"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400" 
+    Width="500"
+    Height="600">
+
+    <Grid Background="Aquamarine">
+        
+        
+        <Button x:Name="CloseButton" Content="Close"  HorizontalAlignment="Left" Margin="425,10,0,0" VerticalAlignment="Top" Height="32" Click="CloseButton_Click"/>
+        <Button x:Name="WorkButton" Content="Work" HorizontalAlignment="Left" Margin="84,512,0,0" VerticalAlignment="Top" Click="WorkButton_Click"/>
+
+        <TextBlock x:Name="Te" HorizontalAlignment="Left" Margin="215,68,0,0" TextWrapping="Wrap" Text="Univeristy" VerticalAlignment="Top"/>
+        <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="278,512,0,0" VerticalAlignment="Top" Click="BuyButton_Click"/>
+
+    </Grid>
+</UserControl>

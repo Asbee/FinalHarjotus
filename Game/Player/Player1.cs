@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace Game.Player
 {
@@ -13,31 +12,54 @@ namespace Game.Player
         public string PJob { get; set; }
         public bool PFood { get; set; }
         public string PItems { get; set; }
-
-        public int PMoney;
-        public int PScore;
-        public int PTime = 50;
-        public int PEducation;
+        public int Work { get; set; }
 
 
-        //Metodit
-        public void Work(int value, int time)
+        //tee listaksi
+        public double PMoney
         {
-
-            PMoney += value;
-            PTime -= time;
-            
-
+            get
+            {
+                return PMoney;
+            }
+            set
+            {
+                PMoney = 200;
+            }
         }
-        public void Buy(int value)
+        public int PScore
         {
-            PMoney -= value;
+            get
+            {
+                return PScore;
+            }
+            set
+            {
+                PScore = 0;
+            }
         }
-        public void Education()
+        public int PHappiness
         {
-            
+            get
+            {
+                return PHappiness;
+            }
+            set
+            {
+                PHappiness = 0;
+            }
         }
-
+        public int PTime
+        {
+            get
+            {
+                return PTime;
+            }
+            set
+            {
+                PTime = 50;
+            }
+        }
+        
     }
-
 }

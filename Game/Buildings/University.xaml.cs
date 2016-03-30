@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Game.Player;
-using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -19,31 +17,12 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class Burger : UserControl
+    public sealed partial class University : UserControl
     {
-        
-        Player1 player = new Player1();
-
-        //Time and work values
-        int work = 20;
-        int time = 10;
-
-
-        //Items value
-        int burgerointi = 20;
-        int Matto = 50;
-        int Ranut = 15;
-        int Juustoburgeri = 10;
-
-
-
-        public Burger()
+        public University()
         {
             this.InitializeComponent();
-            
-            
         }
-
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Grid grid = (Grid)Parent;
@@ -54,22 +33,9 @@ namespace Game.Buildings
         {
 
         }
-
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
 
-        private void WorkButton_Click(object sender, RoutedEventArgs e)
-        {
-            player.Work(work, time);
-            
-            
-        }
-
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
-        {
-            player.Buy(burgerointi);
         }
     }
 }
