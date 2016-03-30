@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -17,9 +18,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class Burger : UserControl
+    public sealed partial class House : UserControl
     {
-        public Burger()
+        public House()
         {
             this.InitializeComponent();
         }
@@ -28,14 +29,13 @@ namespace Game.Buildings
         {
             Grid grid = (Grid)Parent;
             grid.Children.Remove(this);
+            
         }
-
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
+    private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
-
-        private void WorkButton_Click(object sender, RoutedEventArgs e)
+        private void WorkButton_Click (object sender, RoutedEventArgs e)
         {
             
         }

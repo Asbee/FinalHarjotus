@@ -29,6 +29,9 @@ namespace Game
             
         }
         Burger burger = new Buildings.Burger();
+        House house = new Buildings.House();
+        University university = new Buildings.University();
+        Market market = new Buildings.Market();
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
@@ -37,8 +40,17 @@ namespace Game
 
         private void House_Click(object sender, RoutedEventArgs e)
         {
-
+            MyGrid.Children.Add(house);
         }
-        
+
+        private void University_Click(object sender, RoutedEventArgs e)
+        {
+            MyGrid.Children.Add(university);
+        }
+
+        private void Market_Click(object sender, RoutedEventArgs e)
+        {
+            MyGrid.Children.Add(market);
+        }
     }
 }

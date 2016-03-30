@@ -12,6 +12,7 @@ namespace Game.Player
         public string PJob { get; set; }
         public bool PFood { get; set; }
         public string PItems { get; set; }
+        public int Work { get; set; }
 
 
         //tee listaksi
@@ -59,5 +60,6 @@ namespace Game.Player
                 PTime = 50;
             }
         }
+        
     }
 }

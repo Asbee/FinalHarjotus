@@ -17,13 +17,12 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class Burger : UserControl
+    public sealed partial class Market : UserControl
     {
-        public Burger()
+        public Market()
         {
             this.InitializeComponent();
         }
-
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Grid grid = (Grid)Parent;
@@ -34,10 +33,9 @@ namespace Game.Buildings
         {
 
         }
-
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }
