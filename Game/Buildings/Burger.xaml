@@ -15,10 +15,10 @@
 
     <Grid Background="Orange">
         <Button x:Name="CloseButton" Content="Close"  HorizontalAlignment="Left" Margin="425,10,0,0" VerticalAlignment="Top" Height="32" Click="CloseButton_Click"/>
-        <Button x:Name="WorkButton" Content="Work" HorizontalAlignment="Left" Margin="84,512,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="WorkButton" Content="Work" HorizontalAlignment="Left" Margin="84,512,0,0" VerticalAlignment="Top" Click="WorkButton_Click"/>
 
         <TextBlock x:Name="Te" HorizontalAlignment="Left" Margin="215,68,0,0" TextWrapping="Wrap" Text="AssBurger King" VerticalAlignment="Top"/>
-        <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="278,512,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="278,512,0,0" VerticalAlignment="Top" Click="BuyButton_Click"/>
 
     </Grid>
 </UserControl>

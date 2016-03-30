@@ -1,6 +1,8 @@
 ﻿using System;
+using Game.Player;
 using Game.Buildings;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,16 +25,27 @@ namespace Game
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        Burger burger = new Burger();
+        Player1 player = new Player1();
+
+
+        //PääOhjelma
         public MainPage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();   
             
         }
-        Burger burger = new Buildings.Burger();
 
+        
+
+
+
+        //Buttonit
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(burger);
+            
         }
 
         private void House_Click(object sender, RoutedEventArgs e)
