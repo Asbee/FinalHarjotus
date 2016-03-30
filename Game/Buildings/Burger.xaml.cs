@@ -23,11 +23,20 @@ namespace Game.Buildings
     {
         
         Player1 player = new Player1();
-        int burgerointi = 20;
+
+        //Time and work values
         int work = 20;
         int time = 10;
 
-        
+
+        //Items value
+        int burgerointi = 20;
+        int Matto = 50;
+        int Ranut = 15;
+        int Juustoburgeri = 10;
+
+
+
         public Burger()
         {
             this.InitializeComponent();
