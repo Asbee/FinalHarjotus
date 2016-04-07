@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using Game.Player;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Game.Player;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -19,15 +18,17 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class House : UserControl
+    public sealed partial class BurgerPopup : UserControl
     {
-        Player1 player = new Player1();
-        
-        int Happiness = 15;
-        int time = 5;
+        //Items value
+        int burgerointi = 20;
+        int Matto = 50;
+        int Ranut = 15;
         
 
-        public House()
+        Player1 player = new Player1();
+        
+        public BurgerPopup()
         {
             this.InitializeComponent();
         }
@@ -36,12 +37,21 @@ namespace Game.Buildings
         {
             Grid grid = (Grid)Parent;
             grid.Children.Remove(this);
-            
         }
 
-        private void RelaxButton_Click(object sender, RoutedEventArgs e)
+        private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Relax(Happiness, time);
+            player.Buy(burgerointi);
+        }
+
+        private void RanutButton_Click(object sender, RoutedEventArgs e)
+        {
+            player.Buy(Ranut);
+        }
+
+        private void MattoButton_Click(object sender, RoutedEventArgs e)
+        {
+            player.Buy(Matto);
         }
     }
 }

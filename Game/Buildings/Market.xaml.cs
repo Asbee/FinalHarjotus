@@ -20,15 +20,13 @@ namespace Game.Buildings
     public sealed partial class Market : UserControl
     {
         Player.Player1 player = new Player.Player1();
+        Marketpopup marketpop = new Marketpopup();
 
 
         //Aika ja Työ arvot
         int money = 15;
         int time = 10;
-        //Hinnat
-        int pinaatti = 20;
-        int banaani = 5;
-        int makarooni = 15;
+        
 
 
         public Market()
@@ -43,7 +41,7 @@ namespace Game.Buildings
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(pinaatti);
+            Marketti.Children.Add(marketpop);
         }
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {

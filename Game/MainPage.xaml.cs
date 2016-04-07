@@ -3,6 +3,7 @@ using Game.Buildings;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Game.Player;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -23,15 +24,24 @@ namespace Game
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
-        {
-            this.InitializeComponent();
-            
-        }
+
         Burger burger = new Buildings.Burger();
         House house = new Buildings.House();
         University university = new Buildings.University();
         Market market = new Buildings.Market();
+        Jobs jobs1 = new Jobs();
+        Player1 player = new Player1();
+
+
+
+        public MainPage()
+        {
+            this.InitializeComponent();
+
+        }
+        
+        
+        
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
@@ -51,6 +61,11 @@ namespace Game
         private void Market_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(market);
+        }
+
+        private void Jobs_Click(object sender, RoutedEventArgs e)
+        {
+            MyGrid.Children.Add(jobs1);
         }
     }
 }

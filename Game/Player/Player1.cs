@@ -14,7 +14,8 @@ namespace Game.Player
         public bool PFood { get; set; }
         public string PItems { get; set; }
 
-        public int PMoney;
+        public int PMoney { get; set; }
+        private int PMoney2 = 200;
         public int PScore;
         public int PHappiness;   
         public int PTime = 50;
@@ -37,9 +38,18 @@ namespace Game.Player
         {
             PEducation++;
         }
-        public void Relax(int relax)
+        public void Relax(int relax, int time)
         {
-            PHappiness =+ relax;
+            PHappiness += relax;
+            PTime -= time;
+        }
+        public void Clock()
+        {
+            if(PMoney2 < PMoney || PMoney2 > PMoney)
+            {
+               PMoney2 = PMoney;
+            }
+
         }
 
     }

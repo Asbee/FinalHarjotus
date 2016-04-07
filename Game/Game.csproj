@@ -102,11 +102,20 @@
     <Compile Include="Buildings\Burger.xaml.cs">
       <DependentUpon>Burger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Buildings\BurgerPopup.xaml.cs">
+      <DependentUpon>BurgerPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Buildings\House.xaml.cs">
       <DependentUpon>House.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Buildings\Jobs.xaml.cs">
+      <DependentUpon>Jobs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Buildings\Market.xaml.cs">
       <DependentUpon>Market.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buildings\Marketpopup.xaml.cs">
+      <DependentUpon>Marketpopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Buildings\University.xaml.cs">
       <DependentUpon>University.xaml</DependentUpon>
@@ -126,6 +135,9 @@
   <ItemGroup>
     <Content Include="Assets\Background.png" />
     <Content Include="Assets\clerk.jpg" />
+    <Content Include="Assets\House.jpg" />
+    <Content Include="Assets\jobs.jpg" />
+    <Content Include="Assets\Market.jpg" />
     <Content Include="Assets\Scholar.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -145,11 +157,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Buildings\BurgerPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Buildings\House.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Buildings\Jobs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Buildings\Market.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buildings\Marketpopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

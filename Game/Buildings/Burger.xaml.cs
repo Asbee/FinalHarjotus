@@ -9,6 +9,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Game;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -21,19 +22,16 @@ namespace Game.Buildings
 {
     public sealed partial class Burger : UserControl
     {
-        
+        BurgerPopup burgerpop = new BurgerPopup();
         Player1 player = new Player1();
+        
 
         //Time and work values
         int work = 20;
         int time = 10;
 
 
-        //Items value
-        int burgerointi = 20;
-        int Matto = 50;
-        int Ranut = 15;
-        int Juustoburgeri = 10;
+       
 
 
 
@@ -56,7 +54,7 @@ namespace Game.Buildings
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(burgerointi);
+            Burgeri.Children.Add(burgerpop);
         }
     }
 }
