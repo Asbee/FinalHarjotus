@@ -26,8 +26,7 @@ namespace Game.Buildings
         public Jobs()
         {
             this.InitializeComponent();
-        }
-        
+        }       
 
         public void BurgerJob()
         {

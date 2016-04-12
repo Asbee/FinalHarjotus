@@ -13,7 +13,8 @@
 
     <Grid Background="Bisque">
         <Image Width="400" Height="300" Source="/Assets/House.jpg" />
-        <Button x:Name="CloseButton" Content="Close"  HorizontalAlignment="Left" Margin="425,10,0,0" VerticalAlignment="Top" Height="32" Click="CloseButton_Click"/>
+        <Button x:Name="CloseButton" Content="Close"  
+                HorizontalAlignment="Left" Margin="425,10,0,0" VerticalAlignment="Top" Height="32" Click="CloseButton_Click"/>
         <Button x:Name="RelaxButton" Content="Relax" HorizontalAlignment="Left" Margin="215,516,0,0" VerticalAlignment="Top" Click="RelaxButton_Click"/>
         <TextBlock x:Name="Home" HorizontalAlignment="Left" Margin="215,68,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top"/>
 
