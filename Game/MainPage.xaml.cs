@@ -31,6 +31,7 @@ namespace Game
         Market market;
         Jobs jobs1;
         Player1 player;
+        Baari baari;
 
         public MainPage()
         {
@@ -42,6 +43,7 @@ namespace Game
             market = new Market();
             jobs1 = new Jobs();
             player =(App.Current as App).player;
+            baari = new Baari();
         }                       
 
         private void Burger_Click(object sender, RoutedEventArgs e)
@@ -69,6 +71,9 @@ namespace Game
             MyGrid.Children.Add(jobs1);
         }
 
-        
+        private void Baari_Click(object sender, RoutedEventArgs e)
+        {
+            MyGrid.Children.Add(baari);
+        }
     }
 }
