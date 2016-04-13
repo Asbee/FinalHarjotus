@@ -24,7 +24,7 @@ namespace Game.Buildings
         public JobsPopup()
         {
             this.InitializeComponent();
-            player = new Player.Player1();
+            player = (App.Current as App).player;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

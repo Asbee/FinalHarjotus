@@ -29,7 +29,7 @@ namespace Game.Buildings
         public BurgerPopup()
         {
             this.InitializeComponent();
-            player = new Player1();
+            player = (App.Current as App).player;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

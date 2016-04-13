@@ -9,8 +9,7 @@
     mc:Ignorable="d"
     Background="LightBlue"
     >
-
-
+    
     <Grid         
 		Height="600"
 		Width="1200"                      
@@ -18,7 +17,7 @@
 		VerticalAlignment="Center"
 		Background="LightBlue"
 		x:Name="MyGrid"
-             >
+             >    
         
         <Image Stretch="Fill" 
 			Source="Assets/Background.png" 

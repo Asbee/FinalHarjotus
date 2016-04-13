@@ -29,7 +29,7 @@ namespace Game.Buildings
         public Market()
         {
             this.InitializeComponent();
-            player = new Player.Player1();
+            player = (App.Current as App).player;
             marketpop = new Marketpopup();
         }
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)

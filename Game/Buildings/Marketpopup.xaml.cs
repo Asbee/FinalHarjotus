@@ -30,7 +30,7 @@ namespace Game.Buildings
         public Marketpopup()
         {
             this.InitializeComponent();
-            player = new Player.Player1();
+            player = (App.Current as App).player;
         }
 
         private void BanaaniButton_Click(object sender, RoutedEventArgs e)

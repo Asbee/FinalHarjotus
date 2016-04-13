@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Player;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace Game
     /// </summary>
     sealed partial class App : Application
     {
+        public Player1 player = new Player1();
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().

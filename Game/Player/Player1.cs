@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Game.Player
 {
-    class Player1
+    public class Player1
     {
         public bool MarketWork { get; set; }
         public bool UniversityWork { get; set; }
@@ -25,8 +25,7 @@ namespace Game.Player
         public int PEducation = 0;
 
         public Player1()
-        {
-           
+        {           
             PMoney = 200;
             PScore = 0;
             PHappiness = 0;

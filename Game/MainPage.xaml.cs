@@ -42,7 +42,7 @@ namespace Game
             university = new Buildings.University();
             market = new Buildings.Market();
             jobs1 = new Jobs();
-            player = new Player1();
+            player =(App.Current as App).player;
         }       
                 
 
