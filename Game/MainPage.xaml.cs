@@ -69,9 +69,6 @@ namespace Game
             MyGrid.Children.Add(jobs1);
         }
 
-        private void ScoreBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
     }
 }
