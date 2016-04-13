@@ -22,7 +22,6 @@ namespace Game.Buildings
         Player.Player1 player;
         Marketpopup marketpop;
 
-
         //Aika ja Työ arvot
         int work = 15;
         int time = 10;

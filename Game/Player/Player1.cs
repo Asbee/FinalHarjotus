@@ -26,9 +26,7 @@ namespace Game.Player
 
         public Player1()
         {
-            MarketWork = false;
-            UniversityWork = false;
-            BurgerWork = false;
+           
             PMoney = 200;
             PScore = 0;
             PHappiness = 0;

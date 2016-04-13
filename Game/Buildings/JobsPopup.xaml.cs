@@ -19,7 +19,7 @@ namespace Game.Buildings
 {
     public sealed partial class JobsPopup : UserControl
     {
-        Player.Player1 player; 
+        Player.Player1 player;       
          
         public JobsPopup()
         {
@@ -51,7 +51,6 @@ namespace Game.Buildings
                 player.MarketWork = true;
                 player.UniversityWork = false;
             }
-
         }
 
         private void University_Click (object sender, RoutedEventArgs e)

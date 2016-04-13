@@ -19,15 +19,13 @@ using Windows.UI.Xaml.Navigation;
 namespace Game.Buildings
 {
     public sealed partial class BurgerPopup : UserControl
-    {
+    {  
+        Player1 player;
         //Items value
         int burgerointi = 20;
         int Matto = 50;
         int Ranut = 15;
 
-
-        Player1 player;
-        
         public BurgerPopup()
         {
             this.InitializeComponent();
@@ -42,7 +40,7 @@ namespace Game.Buildings
 
         private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(burgerointi);
+            player.Buy(20);
         }
 
         private void RanutButton_Click(object sender, RoutedEventArgs e)
