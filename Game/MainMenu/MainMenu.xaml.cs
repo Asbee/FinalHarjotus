@@ -27,30 +27,20 @@ namespace Game.MainMenu
     public sealed partial class MainMenu : Page
     {
 
-        private MediaElement mediaElement;
+        
         public MainMenu()
         {
             this.InitializeComponent();
 
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             ApplicationView.PreferredLaunchViewSize = new Size { Height = 550, Width = 400 };
-              LoadAudio();
+            
             
 
         }
 
-        //audio track
-        public async void LoadAudio()
-        {
-
-
-            mediaElement = new MediaElement();
-            mediaElement.AutoPlay = true;
-            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
-            StorageFile file = await folder.GetFileAsync("MainTheme.wav");
-            var stream = await file.OpenAsync(FileAccessMode.Read);
-            mediaElement.SetSource(stream, file.ContentType);
-        }
+       
+        
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {

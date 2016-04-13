@@ -11,6 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.Storage;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -22,6 +23,8 @@ namespace Game
     /// </summary>
     sealed partial class App : Application
     {
+
+        public MediaElement mediaElement;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -32,14 +35,37 @@ namespace Game
                 Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
+
+
+
             this.Suspending += OnSuspending;
-        }
+
+    }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
+        /// 
+
+
+        
+
+        public async void LoadAudio()
+        {
+
+
+            mediaElement = new MediaElement();
+            mediaElement.AutoPlay = true;
+            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            StorageFile file = await folder.GetFileAsync("MainTheme.wav");
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            mediaElement.SetSource(stream, file.ContentType);
+
+
+
+        }
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
