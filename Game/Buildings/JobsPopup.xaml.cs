@@ -26,6 +26,10 @@ namespace Game.Buildings
             this.InitializeComponent();
             player = (App.Current as App).player;
         }
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            System.Diagnostics.Debug.WriteLine("The '" + command.Label + "' command has been selected.");
+        }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -33,33 +37,60 @@ namespace Game.Buildings
             grid.Children.Remove(this);
         }
 
-        private void BurgeriButton_Click(object sender, RoutedEventArgs e)
+        private async void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
             if (player.BurgerWork == false )
             {
                 player.BurgerWork = true;
                 player.MarketWork = false;
                 player.UniversityWork = false;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congratulations! You're hired!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
             }           
         }
 
-        private void MarketButton_Click (object sender, RoutedEventArgs e)
+        private async void MarketButton_Click (object sender, RoutedEventArgs e)
         {
-            if (player.MarketWork == false)
+            if (player.MarketWork == false && player.PEducation > 5)
             {
                 player.BurgerWork = false;
                 player.MarketWork = true;
                 player.UniversityWork = false;
-            }
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congratulations! You're hired!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }                   
+                else
+                {
+                    var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study moore! Not enought experience! You don't know me!");
+                    messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                    new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                    await messageDialog.ShowAsync();
+                }
+            
         }
 
-        private void University_Click (object sender, RoutedEventArgs e)
+        private async void University_Click (object sender, RoutedEventArgs e)
         {
-            if (player.UniversityWork == false)
+            if (player.UniversityWork == false && player.PEducation > 10)
             {
                 player.BurgerWork = false;
                 player.MarketWork = false;
                 player.UniversityWork = true;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congratulations! You're hired!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+            else
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study moore! Not enought experience! You don't know me!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
             }
 
         }

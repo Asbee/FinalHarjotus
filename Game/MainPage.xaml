@@ -28,7 +28,7 @@
         <Button x:Name="University" Content="University" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="617,216,0,0" Height="111" Width="125" Click="University_Click"/>
         <Button x:Name="Market" Content="Market" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="839,189,0,0" Width="89" Height="129" Click="Market_Click"/>
         <Button x:Name="Jobs" Content="Jobs" HorizontalAlignment="Left" Margin="769,216,0,0" VerticalAlignment="Top" Height="102" Click="Jobs_Click" UseSystemFocusVisuals="True"/>
-        <TextBlock x:Name="ScoreBlock" HorizontalAlignment="Left" Margin="1010,98,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ScoreBlock" HorizontalAlignment="Left" Margin="1010,98,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" SelectionChanged="ScoreBlock_SelectionChanged"/>
 
     </Grid>
 </Page>

@@ -42,8 +42,7 @@ namespace Game.Buildings
         {
             if (player.UniversityWork == true)
             {
-                player.Work(work, time);
-               
+                player.Work(work, time);               
             }
             else
             {
@@ -54,9 +53,24 @@ namespace Game.Buildings
             }
         }
 
-        private void StudyButton_Click(object sender, RoutedEventArgs e)
+        private async void StudyButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Education();
+            player.PEducation += 1;
+            if (player.PEducation == 5)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered elementry school");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+            if (player.PEducation == 10)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered hight school");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+
         }
     }
 }

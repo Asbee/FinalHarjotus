@@ -19,10 +19,10 @@ namespace Game.Player
         public string PItems { get; set; }
 
         public int PMoney { get; set; }
-        public int PScore;
-        public int PHappiness;   
-        public int PTime = 50;
-        public int PEducation = 0;
+        public int PScore { get; set; }
+        public int PHappiness {  get; set; }   
+        public int PTime { get; set; }
+        public int PEducation { get; set; }
 
         public Player1()
         {           
@@ -30,6 +30,7 @@ namespace Game.Player
             PScore = 0;
             PHappiness = 0;
             PEducation = 1;
+            PTime = 10;
         }
 
         //Metodit

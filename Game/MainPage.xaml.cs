@@ -32,19 +32,17 @@ namespace Game
         Jobs jobs1;
         Player1 player;
 
-            
         public MainPage()
         {
             this.InitializeComponent();
             ApplicationView.GetForCurrentView().TryResizeView(new Size { Width = 1250, Height = 600 });
             burger = new Burger();
             house = new House();
-            university = new Buildings.University();
-            market = new Buildings.Market();
+            university = new University();
+            market = new Market();
             jobs1 = new Jobs();
             player =(App.Current as App).player;
-        }       
-                
+        }                       
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
@@ -69,6 +67,11 @@ namespace Game
         private void Jobs_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(jobs1);
+        }
+
+        private void ScoreBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
