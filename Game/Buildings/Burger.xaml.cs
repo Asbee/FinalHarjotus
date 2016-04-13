@@ -26,6 +26,7 @@ namespace Game.Buildings
         Player1 player = new Player1();
         
 
+
         //Time and work values
         int work = 20;
         int time = 10;
@@ -49,12 +50,14 @@ namespace Game.Buildings
         }
         private void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Work(work, time);            
+            player.Work(work, time);
+                      
         }
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
             Burgeri.Children.Add(burgerpop);
+            
         }
     }
 }

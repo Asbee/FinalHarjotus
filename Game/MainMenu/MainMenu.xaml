@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="Game.MainMenu.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Game.MainMenu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="400"
+    Height="550">
+
+    <Grid x:Name="MenuCanvas" Background="Chocolate">
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="77" Margin="97,24,0,0" VerticalAlignment="Top" Width="205" Background="#FFC11818">
+            <TextBlock x:Name="GameName" TextWrapping="Wrap" Text="Fastlane Game" FontSize="24" FontFamily="Showcard Gothic" TextAlignment="Center" Margin="20,0,9,-1" />
+
+        </Border>
+        <Button x:Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="136,160,0,0" VerticalAlignment="Top" Height="67" Width="123" Background="Crimson" FontFamily="Impact" FontSize="21.333" Click="PlayButton_Click"/>
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="136,274,0,0" VerticalAlignment="Top" Height="67" Width="123" Background="Crimson" FontFamily="Impact" FontSize="21.333" Click="ExitButton_Click"/>
+        <TextBlock x:Name="CreatorsBlock" HorizontalAlignment="Left" Margin="112,526,0,0" TextWrapping="Wrap" Text="Created by: Santtu Boman, Aaro Lyytinen, Nicolas Liuhanen" VerticalAlignment="Top" Width="278" FontSize="10.667"/>
+    </Grid>
+</Page>

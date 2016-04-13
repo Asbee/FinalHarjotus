@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -37,6 +38,7 @@ namespace Game
         public MainPage()
         {
             this.InitializeComponent();
+            ApplicationView.GetForCurrentView().TryResizeView(new Size { Width = 1250, Height = 600 });
 
         }
         
@@ -66,6 +68,7 @@ namespace Game
         private void Jobs_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(jobs1);
+            
         }
     }
 }

@@ -17,7 +17,7 @@
         <Button x:Name="CloseButton" Content="Close"  HorizontalAlignment="Left" Margin="425,10,0,0" VerticalAlignment="Top" Height="32" Click="CloseButton_Click"/>
         <Button x:Name="Burger" Content="Burger" HorizontalAlignment="Left" Margin="100,134,0,0" VerticalAlignment="Top" Click="Burger_Click"/>
         <Button x:Name="Market" Content="Market" HorizontalAlignment="Left" Margin="215,134,0,0" VerticalAlignment="Top" Click="Market_Click"/>
-        <TextBlock x:Name="Jobsblock" HorizontalAlignment="Left" Margin="215,65,0,0" TextWrapping="Wrap" Text="Jobs 4 All" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Jobsblock" HorizontalAlignment="Left" Margin="215,70,0,0" TextWrapping="Wrap" Text="Jobs 4 All" VerticalAlignment="Top" FontFamily="Impact" Height="30" Width="124" FontSize="21.333"/>
         <TextBlock x:Name="Getwork" HorizontalAlignment="Left" Margin="119,500,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281"/>
         
 
