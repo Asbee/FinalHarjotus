@@ -24,22 +24,13 @@ namespace Game.Buildings
     {
         BurgerPopup burgerpop = new BurgerPopup();
         Player1 player = new Player1();
-        
 
         //Time and work values
         int work = 20;
-        int time = 10;
-
-
-       
-
-
-
+        int time = 10; 
         public Burger()
         {
             this.InitializeComponent();
-            
-            
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

@@ -19,7 +19,8 @@
                 HorizontalAlignment="Left" Margin="90,512,0,0" VerticalAlignment="Top" Click="WorkButton_Click"/>
 
         <TextBlock x:Name="MarketButton" HorizontalAlignment="Left" Margin="217,61,0,0" TextWrapping="Wrap" Text="Market" VerticalAlignment="Top"  TextAlignment="Center" FontSize="21.333" FontFamily="SimSun" Width="85" RenderTransformOrigin="1.067,0.733"/>
-        <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="355,512,0,0" VerticalAlignment="Top" Click="BuyButton_Click"/>
+        <Button x:Name="BuyButton" Content="Buy" 
+                HorizontalAlignment="Left" Margin="355,512,0,0" VerticalAlignment="Top" Click="BuyButton_Click"/>
 
     </Grid>
 </UserControl>

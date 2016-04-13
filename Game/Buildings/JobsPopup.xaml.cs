@@ -4,8 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
-using Game.Player;
-using Game.Buildings;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -19,30 +17,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class Jobs : UserControl
+    public sealed partial class JobsPopup : UserControl
     {
-        Player1 player = new Player1();
-        JobsPopup jobspop = new JobsPopup();
-
-        public Jobs()
+        public JobsPopup()
         {
             this.InitializeComponent();
-        }       
-
-        public void BurgerJob()
-        {
-            if (player.PEducation == 0)
-            {
-                player.PJob = "Burger";
-            }
-                
-        }
-        public void MarketJob()
-        {
-            if (player.PEducation == 1)
-            {
-                player.PJob = "Market";
-            }
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -51,15 +30,18 @@ namespace Game.Buildings
             grid.Children.Remove(this);
         }
 
-        private void Burger_Click(object sender, RoutedEventArgs e)
+        private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
-            BurgerJob();
+
         }
 
-        private void Market_Click(object sender, RoutedEventArgs e)
+        private void RanutButton_Click(object sender, RoutedEventArgs e)
         {
-            
-           Duuni.Children.Add(jobspop);
+
+        }
+
+        private void MattoButton_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
