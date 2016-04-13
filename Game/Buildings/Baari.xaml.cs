@@ -17,20 +17,26 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class Market : UserControl
+    public sealed partial class Baari : UserControl
     {
         Player.Player1 player;
-        Marketpopup marketpop;
+        Baaripopup baaripop;
+
 
         //Aika ja Työ arvot
+        int money = 10;
         int work = 15;
         int time = 10;
-        
-        public Market()
+
+
+
+        public Baari()
         {
-            this.InitializeComponent();
-            player = (App.Current as App).player;
-            marketpop = new Marketpopup();
+            {
+                this.InitializeComponent();
+                player = (App.Current as App).player;
+               baaripop = new Baaripopup();
+            }
         }
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
         {
@@ -44,14 +50,13 @@ namespace Game.Buildings
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            Marketti.Children.Add(marketpop);
+            Kapakka.Children.Add(baaripop);
         }
         private async void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            if (player.MarketWork == true)
+            if (player.BurgerWork == true)
             {
                 player.Work(work, time);
-
             }
             else
             {
@@ -60,6 +65,7 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
+            
         }
     }
 }

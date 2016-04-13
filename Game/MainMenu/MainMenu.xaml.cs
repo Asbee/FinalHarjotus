@@ -26,7 +26,7 @@ namespace Game.MainMenu
     /// </summary>
     public sealed partial class MainMenu : Page
     {
-
+        MediaElement media;
         
         public MainMenu()
         {
@@ -34,9 +34,11 @@ namespace Game.MainMenu
 
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             ApplicationView.PreferredLaunchViewSize = new Size { Height = 550, Width = 400 };
-            
-            
 
+            media = (App.Current as App).media;
+            
+            
+            
         }
 
        

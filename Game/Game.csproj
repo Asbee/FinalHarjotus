@@ -100,6 +100,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Buildings\Baari.xaml.cs">
+      <DependentUpon>Baari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buildings\Baaripopup.xaml.cs">
+      <DependentUpon>Baaripopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Buildings\Burger.xaml.cs">
       <DependentUpon>Burger.xaml</DependentUpon>
     </Compile>
@@ -140,6 +146,7 @@
     <None Include="Game_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\baari.jpg" />
     <Content Include="Assets\Background.png" />
     <Content Include="Assets\clerk.jpg" />
     <Content Include="Assets\House.jpg" />
@@ -161,6 +168,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Buildings\Baari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buildings\Baaripopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Buildings\Burger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

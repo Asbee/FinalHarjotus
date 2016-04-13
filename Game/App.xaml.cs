@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Player;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,8 +24,8 @@ namespace Game
     /// </summary>
     sealed partial class App : Application
     {
-
-        public MediaElement mediaElement;
+        public Player1 player = new Player1();
+        public MediaElement media = new MediaElement();
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -35,12 +36,9 @@ namespace Game
                 Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
-
-
-
             this.Suspending += OnSuspending;
+        }
 
-    }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -49,22 +47,16 @@ namespace Game
         /// <param name="e">Details about the launch request and process.</param>
         /// 
 
-
-        
-
         public async void LoadAudio()
         {
 
 
-            mediaElement = new MediaElement();
-            mediaElement.AutoPlay = true;
+            media = new MediaElement();
+            media.AutoPlay = false;
             StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
             StorageFile file = await folder.GetFileAsync("MainTheme.wav");
             var stream = await file.OpenAsync(FileAccessMode.Read);
-            mediaElement.SetSource(stream, file.ContentType);
-
-
-
+            media.SetSource(stream, file.ContentType);
         }
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {

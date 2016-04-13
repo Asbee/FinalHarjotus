@@ -26,7 +26,7 @@ namespace Game.Buildings
         public University()
         {
             this.InitializeComponent();
-            player = new Player.Player1();
+            player = (App.Current as App).player;
         }
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
         {

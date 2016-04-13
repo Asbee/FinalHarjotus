@@ -28,7 +28,7 @@ namespace Game.Buildings
         public Burger()
         {
            this.InitializeComponent();
-           player = new Player1();
+           player = (App.Current as App).player; 
            burgerpop = new BurgerPopup();
         }
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)

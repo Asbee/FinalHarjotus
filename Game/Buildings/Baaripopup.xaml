@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="Game.Buildings.Baaripopup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Game.Buildings"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid Background="BurlyWood" Width="300" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="BeerButton" Content="Beer" HorizontalAlignment="Left" Margin="24,116,0,0" VerticalAlignment="Top" Width="92" Click="BeerButton_Click"/>
+        <Button x:Name="JalluButton" Content="Jallu" HorizontalAlignment="Left" Margin="24,172,0,0" VerticalAlignment="Top" Width="92" Click="JalluButton_Click"/>
+        <Button x:Name="WineButton" Content="Wine" HorizontalAlignment="Left" Margin="24,229,0,0" VerticalAlignment="Top" Width="92" Click="WineButton_Click"/>
+        <TextBlock x:Name="BeerPrice" HorizontalAlignment="Left" Margin="195,125,0,0" TextWrapping="Wrap" Text="Price: 5€" VerticalAlignment="Top" Width="83" FontFamily="SimSun"/>
+        <TextBlock x:Name="JalluPrice" HorizontalAlignment="Left" Margin="195,184,0,0" TextWrapping="Wrap" Text="Price: 15€" VerticalAlignment="Top" FontFamily="SimSun"/>
+        <TextBlock x:Name="WinePrice" HorizontalAlignment="Left" Margin="195,235,0,0" TextWrapping="Wrap" Text="Price: 20€" VerticalAlignment="Top" RenderTransformOrigin="0.527,0.892" FontFamily="SimSun"/>
+        <TextBlock x:Name="BarDrinks" HorizontalAlignment="Left" Margin="113,68,0,0" TextWrapping="Wrap" Text="Bar Drinks" VerticalAlignment="Top" FontFamily="SimSun" FontSize="14.667" FontWeight="Bold" RenderTransformOrigin="0.77,0.728"/>
+        <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Margin="221,58,0,0" VerticalAlignment="Top" Height="27" Width="69" Click="CloseButton_Click" BorderThickness="0" Opacity="0.995" FontSize="12"/>
+
+    </Grid>
+</UserControl>

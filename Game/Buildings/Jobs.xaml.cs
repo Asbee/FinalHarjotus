@@ -27,7 +27,7 @@ namespace Game.Buildings
         public Jobs()
         {
             this.InitializeComponent();
-            player = new Player1();
+            player = (App.Current as App).player;
             jobspop = new JobsPopup();
 
         }     

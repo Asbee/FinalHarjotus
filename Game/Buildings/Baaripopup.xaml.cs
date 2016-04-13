@@ -17,35 +17,38 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Game.Buildings
 {
-    public sealed partial class Marketpopup : UserControl
+    public sealed partial class Baaripopup : UserControl
     {
-
-        Player.Player1 player;
+        Player.Player1 player = new Player.Player1();
 
         //Hinnat
-        int pinaatti = 20;
-        int banaani = 5;
-        int makarooni = 15;
+        int beer = 5;
+        int jallu = 5;
+        int wine = 6;
 
-        public Marketpopup()
+
+
+        public Baaripopup()
         {
             this.InitializeComponent();
-            player = (App.Current as App).player;
         }
 
-        private void BanaaniButton_Click(object sender, RoutedEventArgs e)
+        private void BeerButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(banaani);
+            player.Buy(beer);
+            player.PHappiness++;
         }
 
-        private void PinaattiButton_Click(object sender, RoutedEventArgs e)
+        private void JalluButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(pinaatti);
+            player.Buy(jallu);
+            player.PHappiness++;
         }
 
-        private void MakaroniButton_Click(object sender, RoutedEventArgs e)
+        private void WineButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(makarooni);
+            player.Buy(wine);
+            player.PHappiness++;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
