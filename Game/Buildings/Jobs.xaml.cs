@@ -21,30 +21,16 @@ namespace Game.Buildings
 {
     public sealed partial class Jobs : UserControl
     {
-        Player1 player = new Player1();
-        JobsPopup jobspop = new JobsPopup();
+        Player1 player;
+        JobsPopup jobspop; 
 
         public Jobs()
         {
             this.InitializeComponent();
-        }       
+            player = new Player1();
+            jobspop = new JobsPopup();
 
-        public void BurgerJob()
-        {
-            if (player.PEducation == 0)
-            {
-                player.PJob = "Burger";
-            }
-                
-        }
-        public void MarketJob()
-        {
-            if (player.PEducation == 1)
-            {
-                player.PJob = "Market";
-            }
-        }
-
+        }     
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Grid grid = (Grid)Parent;
@@ -53,7 +39,7 @@ namespace Game.Buildings
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
-            BurgerJob();
+           
         }
 
         private void Market_Click(object sender, RoutedEventArgs e)

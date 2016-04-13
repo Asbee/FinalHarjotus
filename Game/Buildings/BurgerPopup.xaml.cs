@@ -24,13 +24,14 @@ namespace Game.Buildings
         int burgerointi = 20;
         int Matto = 50;
         int Ranut = 15;
-        
 
-        Player1 player = new Player1();
+
+        Player1 player;
         
         public BurgerPopup()
         {
             this.InitializeComponent();
+            player = new Player1();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

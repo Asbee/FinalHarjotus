@@ -24,24 +24,24 @@ namespace Game
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
-        Burger burger = new Buildings.Burger();
-        House house = new Buildings.House();
-        University university = new Buildings.University();
-        Market market = new Buildings.Market();
-        Jobs jobs1 = new Jobs();
-        Player1 player = new Player1();
-
-
-
+        Burger burger;
+        House house;
+        University university;
+        Market market;
+        Jobs jobs1;
+        Player1 player;
+            
         public MainPage()
         {
             this.InitializeComponent();
-
-        }
-        
-        
-        
+            burger = new Burger();
+            house = new House();
+            university = new Buildings.University();
+            market = new Buildings.Market();
+            jobs1 = new Jobs();
+            player = new Player1();
+        }       
+                
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {

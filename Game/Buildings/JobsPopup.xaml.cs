@@ -19,9 +19,12 @@ namespace Game.Buildings
 {
     public sealed partial class JobsPopup : UserControl
     {
+        Player.Player1 player; 
+         
         public JobsPopup()
         {
             this.InitializeComponent();
+            player = new Player.Player1();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -32,16 +35,33 @@ namespace Game.Buildings
 
         private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
+            if (player.BurgerWork == false )
+            {
+                player.BurgerWork = true;
+                player.MarketWork = false;
+                player.UniversityWork = false;
+            }           
+        }
+
+        private void MarketButton_Click (object sender, RoutedEventArgs e)
+        {
+            if (player.MarketWork == false)
+            {
+                player.BurgerWork = false;
+                player.MarketWork = true;
+                player.UniversityWork = false;
+            }
 
         }
 
-        private void RanutButton_Click(object sender, RoutedEventArgs e)
+        private void University_Click (object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void MattoButton_Click(object sender, RoutedEventArgs e)
-        {
+            if (player.UniversityWork == false)
+            {
+                player.BurgerWork = false;
+                player.MarketWork = false;
+                player.UniversityWork = true;
+            }
 
         }
     }

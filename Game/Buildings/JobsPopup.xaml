@@ -12,8 +12,8 @@
 
     <Grid Background="Bisque" Width="300" Height="400" x:Name="Burgerpop">
             <Button x:Name="BurgerW" Content="Burger" HorizontalAlignment="Left" Margin="46,83,0,0" VerticalAlignment="Top" FontFamily="Stencil" Click="BurgeriButton_Click" Width="120"/>
-            <Button x:Name="MarketW" Content="Market" HorizontalAlignment="Left" Margin="46,152,0,0" VerticalAlignment="Top" Width="120" FontFamily="Stencil" Click="RanutButton_Click" Height="31"/>
-            <Button x:Name="UniversirtyW" Content="University" HorizontalAlignment="Left" Margin="46,230,0,0" VerticalAlignment="Top" Width="120" FontFamily="Stencil" Click="MattoButton_Click"/>
+            <Button x:Name="MarketW" Content="Market" HorizontalAlignment="Left" Margin="46,152,0,0" VerticalAlignment="Top" Width="120" FontFamily="Stencil" Click="MarketButton_Click" Height="31"/>
+            <Button x:Name="UniversirtyW" Content="University" HorizontalAlignment="Left" Margin="46,230,0,0" VerticalAlignment="Top" Width="120" FontFamily="Stencil" Click="University_Click"/>
             <TextBlock x:Name="BurgerWWage" HorizontalAlignment="Left" Margin="180,89,0,0" TextWrapping="Wrap" Text="Clerk" VerticalAlignment="Top" FontFamily="Stencil"/>
             <TextBlock x:Name="MarketWWage" HorizontalAlignment="Left" Margin="180,147,0,0" TextWrapping="Wrap" Text="Assistant manager" VerticalAlignment="Top" FontFamily="Stencil"/>
             <TextBlock x:Name="UniversirtWWage" HorizontalAlignment="Left" Margin="180,236,0,0" TextWrapping="Wrap" Text="Professor" VerticalAlignment="Top" FontFamily="Stencil" RenderTransformOrigin="0.509,4.164"/>
