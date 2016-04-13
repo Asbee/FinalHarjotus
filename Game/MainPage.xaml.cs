@@ -25,25 +25,26 @@ namespace Game
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Burger burger;
+        House house;
+        University university;
+        Market market;
+        Jobs jobs1;
+        Player1 player;
 
-        Burger burger = new Buildings.Burger();
-        House house = new Buildings.House();
-        University university = new Buildings.University();
-        Market market = new Buildings.Market();
-        Jobs jobs1 = new Jobs();
-        Player1 player = new Player1();
-
-
-
+            
         public MainPage()
         {
             this.InitializeComponent();
             ApplicationView.GetForCurrentView().TryResizeView(new Size { Width = 1250, Height = 600 });
-
-        }
-        
-        
-        
+            burger = new Burger();
+            house = new House();
+            university = new Buildings.University();
+            market = new Buildings.Market();
+            jobs1 = new Jobs();
+            player = new Player1();
+        }       
+                
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
@@ -68,7 +69,6 @@ namespace Game
         private void Jobs_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(jobs1);
-            
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Game.Buildings
     public sealed partial class Marketpopup : UserControl
     {
 
-        Player.Player1 player = new Player.Player1();
+        Player.Player1 player;
 
         //Hinnat
         int pinaatti = 20;
@@ -30,6 +30,7 @@ namespace Game.Buildings
         public Marketpopup()
         {
             this.InitializeComponent();
+            player = new Player.Player1();
         }
 
         private void BanaaniButton_Click(object sender, RoutedEventArgs e)

@@ -19,19 +19,22 @@ namespace Game.Buildings
 {
     public sealed partial class Market : UserControl
     {
-        Player.Player1 player = new Player.Player1();
-        Marketpopup marketpop = new Marketpopup();
-
+        Player.Player1 player;
+        Marketpopup marketpop;
 
         //Aika ja Työ arvot
-        int money = 15;
+        int work = 15;
         int time = 10;
         
-
-
         public Market()
         {
             this.InitializeComponent();
+            player = new Player.Player1();
+            marketpop = new Marketpopup();
+        }
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            System.Diagnostics.Debug.WriteLine("The '" + command.Label + "' command has been selected.");
         }
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -43,9 +46,20 @@ namespace Game.Buildings
         {
             Marketti.Children.Add(marketpop);
         }
-        private void WorkButton_Click(object sender, RoutedEventArgs e)
+        private async void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Work(money, time);
+            if (player.MarketWork == true)
+            {
+                player.Work(work, time);
+
+            }
+            else
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You dont work here!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
         }
     }
 }

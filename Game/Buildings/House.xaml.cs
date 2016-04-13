@@ -21,7 +21,7 @@ namespace Game.Buildings
 {
     public sealed partial class House : UserControl
     {
-        Player1 player = new Player1();
+        Player1 player;
         
         int Happiness = 15;
         int time = 5;
@@ -30,13 +30,13 @@ namespace Game.Buildings
         public House()
         {
             this.InitializeComponent();
+            player = new Player1();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Grid grid = (Grid)Parent;
-            grid.Children.Remove(this);
-            
+            grid.Children.Remove(this);            
         }
 
         private void RelaxButton_Click(object sender, RoutedEventArgs e)

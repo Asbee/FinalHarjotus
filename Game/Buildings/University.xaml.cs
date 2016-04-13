@@ -19,12 +19,18 @@ namespace Game.Buildings
 {
     public sealed partial class University : UserControl
     {
-        Player.Player1 player = new Player.Player1();
-
+        Player.Player1 player;
+        int work = 20;
+        int time = 10;
 
         public University()
         {
             this.InitializeComponent();
+            player = new Player.Player1();
+        }
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            System.Diagnostics.Debug.WriteLine("The '" + command.Label + "' command has been selected.");
         }
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -32,11 +38,23 @@ namespace Game.Buildings
             grid.Children.Remove(this);
         }
 
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        private async void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (player.UniversityWork == true)
+            {
+                player.Work(work, time);
+               
+            }
+            else
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You dont work here!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
         }
-        private void WorkButton_Click(object sender, RoutedEventArgs e)
+
+        private void StudyButton_Click(object sender, RoutedEventArgs e)
         {
             player.Education();
         }

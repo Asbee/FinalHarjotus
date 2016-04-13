@@ -112,6 +112,9 @@
     <Compile Include="Buildings\Jobs.xaml.cs">
       <DependentUpon>Jobs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Buildings\JobsPopup.xaml.cs">
+      <DependentUpon>JobsPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Buildings\Market.xaml.cs">
       <DependentUpon>Market.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Buildings\Jobs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buildings\JobsPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
