@@ -12,6 +12,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.Storage;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -24,7 +25,7 @@ namespace Game
     sealed partial class App : Application
     {
         public Player1 player = new Player1();
-      
+        public MediaElement media = new MediaElement();
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -38,11 +39,25 @@ namespace Game
             this.Suspending += OnSuspending;
         }
 
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
+        /// 
+
+        public async void LoadAudio()
+        {
+
+
+            media = new MediaElement();
+            media.AutoPlay = false;
+            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            StorageFile file = await folder.GetFileAsync("MainTheme.wav");
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            media.SetSource(stream, file.ContentType);
+        }
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
@@ -78,7 +93,7 @@ namespace Game
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(MainMenu.MainMenu), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
