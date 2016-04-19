@@ -103,13 +103,36 @@ namespace Game.Buildings
 
         private async void BarW_Click(object sender, RoutedEventArgs e)
         {
-            if (player.BarWork == false && player.PEducation > 10)
+            if (player.BarWork == false && player.PEducation > 7)
             {
                 player.BurgerWork = false;
                 player.MarketWork = false;
                 player.UniversityWork = false;
                 player.JobsWork = false;
                 player.BarWork = true;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congratulations! You're hired!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+            else
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+        }
+
+        private async void JobsW_Click(object sender, RoutedEventArgs e)
+        {
+            if (player.JobsWork == false && player.PEducation > 3)
+            {
+                player.BurgerWork = false;
+                player.MarketWork = false;
+                player.UniversityWork = false;
+                player.JobsWork = true;
+                player.BarWork = false;
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Congratulations! You're hired!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
