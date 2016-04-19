@@ -39,6 +39,13 @@ namespace Game.Buildings
 
         private async void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
+            if (player.BurgerWork == true)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You have a job here already! No rise for you!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
             if (player.BurgerWork == false )
             {
                 player.BurgerWork = true;
@@ -50,11 +57,18 @@ namespace Game.Buildings
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
-            }           
+            }   
         }
 
         private async void MarketButton_Click (object sender, RoutedEventArgs e)
         {
+            if (player.MarketWork == true)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You have a job here already! No rise for you!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
             if (player.MarketWork == false && player.PEducation > 5)
             {
                 player.BurgerWork = false;
@@ -66,20 +80,28 @@ namespace Game.Buildings
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
-            }                   
-                else
-                {
+            }
+
+            if (player.MarketWork == false && player.PEducation <= 5)
+            {
                     var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
                     messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                     new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                     await messageDialog.ShowAsync();
-                }
-            
+             }
         }
 
         private async void University_Click (object sender, RoutedEventArgs e)
         {
-            if (player.UniversityWork == false && player.PEducation > 10)
+            if (player.UniversityWork == true)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You have a job here already! No rise for you!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+
+                if (player.UniversityWork == false && player.PEducation > 10)
             {
                 player.BurgerWork = false;
                 player.MarketWork = false;
@@ -91,7 +113,7 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            else
+            if (player.UniversityWork == false && player.PEducation <= 10)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
@@ -103,7 +125,15 @@ namespace Game.Buildings
 
         private async void BarW_Click(object sender, RoutedEventArgs e)
         {
-            if (player.BarWork == false && player.PEducation > 7)
+            if (player.BarWork == true)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You have a job here already! No rise for you!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+
+            if (player.BarWork == false && player.PEducation > 7)            
             {
                 player.BurgerWork = false;
                 player.MarketWork = false;
@@ -115,7 +145,7 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            else
+            if (player.BarWork == false && player.PEducation <= 7)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
@@ -126,6 +156,14 @@ namespace Game.Buildings
 
         private async void JobsW_Click(object sender, RoutedEventArgs e)
         {
+            if (player.JobsWork == true)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You have a job here already! No rise for you!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+
             if (player.JobsWork == false && player.PEducation > 3)
             {
                 player.BurgerWork = false;
@@ -138,7 +176,7 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            else
+            if (player.JobsWork == false && player.PEducation <= 3)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
