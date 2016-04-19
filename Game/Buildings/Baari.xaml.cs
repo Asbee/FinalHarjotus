@@ -24,7 +24,7 @@ namespace Game.Buildings
 
 
         //Aika ja Työ arvot
-        int money = 10;
+        
         int work = 15;
         int time = 10;
 
@@ -54,7 +54,7 @@ namespace Game.Buildings
         }
         private async void WorkButton_Click(object sender, RoutedEventArgs e)
         {
-            if (player.BurgerWork == true)
+            if (player.BarWork == true)
             {
                 player.Work(work, time);
             }

@@ -9,7 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Background="BurlyWood" Width="300" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Background="BurlyWood" Width="300" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="93,98,37,102">
         <Button x:Name="BeerButton" Content="Beer" HorizontalAlignment="Left" Margin="24,116,0,0" VerticalAlignment="Top" Width="92" Click="BeerButton_Click"/>
         <Button x:Name="JalluButton" Content="Jallu" HorizontalAlignment="Left" Margin="24,172,0,0" VerticalAlignment="Top" Width="92" Click="JalluButton_Click"/>
         <Button x:Name="WineButton" Content="Wine" HorizontalAlignment="Left" Margin="24,229,0,0" VerticalAlignment="Top" Width="92" Click="WineButton_Click"/>

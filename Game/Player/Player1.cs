@@ -12,9 +12,11 @@ namespace Game.Player
         public bool MarketWork { get; set; }
         public bool UniversityWork { get; set; }
         public bool BurgerWork { get; set; }
+        public bool JobsWork { get; set; }
+        public bool BarWork { get; set; }
+
       
         public string PName { get; set; }
-        public string PJob { get; set; }
         public bool PFood { get; set; }
         public string PItems { get; set; }
 

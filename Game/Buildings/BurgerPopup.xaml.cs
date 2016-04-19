@@ -22,7 +22,7 @@ namespace Game.Buildings
     {  
         Player1 player;
         //Items value
-        int burgerointi = 20;
+        int burgerointi = 10;
         int Matto = 50;
         int Ranut = 15;
 
@@ -40,7 +40,7 @@ namespace Game.Buildings
 
         private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(20);
+            player.Buy(burgerointi);
         }
 
         private void RanutButton_Click(object sender, RoutedEventArgs e)

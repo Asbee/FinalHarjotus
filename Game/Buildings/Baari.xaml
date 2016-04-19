@@ -24,7 +24,7 @@
 
 
         <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="355,512,0,0" VerticalAlignment="Top" Click="BuyButton_Click"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="237,99,0,0" TextWrapping="Wrap" Text="Bar" VerticalAlignment="Top" RenderTransformOrigin="1.881,0.45"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="230,73,0,0" TextWrapping="Wrap" Text="Bar" VerticalAlignment="Top" RenderTransformOrigin="1.881,0.45" FontSize="21.333"/>
 
     </Grid>
 </UserControl>
