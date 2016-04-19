@@ -14,7 +14,7 @@ namespace Game.Player
         public bool BurgerWork { get; set; }
         public bool JobsWork { get; set; }
         public bool BarWork { get; set; }
-
+        public int PDrink { get; set; }
       
         public string PName { get; set; }
         public bool PFood { get; set; }
@@ -33,6 +33,7 @@ namespace Game.Player
             PHappiness = 0;
             PEducation = 1;
             PTime = 10;
+            PDrink = 0;
         }
 
         //Metodit

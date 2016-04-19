@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,29 +27,46 @@ namespace Game.Buildings
         int jallu = 5;
         int wine = 6;
 
-
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            Debug.WriteLine("The '" + command.Label + "' command has been selected.");
+        }
 
         public Baaripopup()
         {
             this.InitializeComponent();
         }
 
-        private void BeerButton_Click(object sender, RoutedEventArgs e)
+        private async void BeerButton_Click(object sender, RoutedEventArgs e)
         {
             player.Buy(beer);
             player.PHappiness++;
+            player.PDrink++;
+
+            if (player.PDrink > 10)
+            {
+                player.PTime = 10;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You are getting too drunk! Bartender wont serve for you anymore and you are thrown out of the Bar.");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+                
+              }
+          
         }
 
         private void JalluButton_Click(object sender, RoutedEventArgs e)
         {
             player.Buy(jallu);
             player.PHappiness++;
+            player.PDrink++;
         }
 
         private void WineButton_Click(object sender, RoutedEventArgs e)
         {
             player.Buy(wine);
             player.PHappiness++;
+            player.PDrink++;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
