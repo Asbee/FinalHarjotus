@@ -55,12 +55,25 @@ namespace Game.Player
             PHappiness += relax;
             PTime -= time;
         }
-        public void Clock()
+        public void RoundCheck()
         {
-           
-
+           if(PTime == 0)
+            {
+                NewRound();
+            }
         }
-
+        public void NewRound()
+        {
+            if (PFood == true)
+            {
+                PTime = 10;
+                PFood = false;
+            }
+            else
+            {
+                PTime = 8;
+            }
+        }
     }
 
 }
