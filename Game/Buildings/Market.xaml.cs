@@ -50,6 +50,7 @@ namespace Game.Buildings
         {
             if (player.MarketWork == true)
             {
+                player.CashSound();
                 player.Work(work, time);
 
             }

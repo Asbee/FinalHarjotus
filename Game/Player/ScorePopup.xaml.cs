@@ -23,10 +23,13 @@ namespace Game.Player
     public sealed partial class ScorePopup : UserControl
     {
         private MainPage page;
+
+        public Player1 player { get; set; }
         
         public ScorePopup(MainPage page)
         {
             this.InitializeComponent();
+            player = (App.Current as App).player;
             this.page = page;
             EducationSlider.Value = (App.Current as App).player.PEducation;
             HappySlider.Value = (App.Current as App).player.PHappiness;
