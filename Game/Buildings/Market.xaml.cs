@@ -45,6 +45,7 @@ namespace Game.Buildings
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
             Marketti.Children.Add(marketpop);
+            player.RoundCheck();
         }
         private async void WorkButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +53,7 @@ namespace Game.Buildings
             {
                 player.CashSound();
                 player.Work(work, time);
+                player.RoundCheck();
 
             }
             else

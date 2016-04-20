@@ -111,19 +111,39 @@ namespace Game.Player
                 NewRound();
             }
         }
-        public void NewRound()
-        {
-            if (PFood == true)
-            {
-                PTime = 10;
-                PFood = false;
+        public async void NewRound()
+        {            
+            if (PFood == true && PDrink <= 4)
+            {               
+                PTime = 10;                
             }
-            else
+            if (PFood == false && PDrink > 4)
             {
-                PTime = 8;
+                PTime = 5;                
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You forgot to eat, but you remembered to drink. Enjoy your hangover and starvation combination!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();                
             }
+            if (PFood == false && PDrink <= 4)
+            {
+                PTime = 8;               
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You forgot to eat, less time for you!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();               
+            }
+            if (PFood == true && PDrink > 4)
+            {
+                PTime = 7;               
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You've got a hangover");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();                
+            }
+            PFood = false;
+            PDrink = 0;
         }
-
 
         //Sound Files
         public async void CashSound()

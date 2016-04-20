@@ -22,7 +22,7 @@ namespace Game.Buildings
     {  
         Player1 player;
         //Items value
-        int burgerointi = 10;
+        int burgerointi = 20;
         int Matto = 50;
         int Ranut = 15;
 

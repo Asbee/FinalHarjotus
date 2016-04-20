@@ -55,7 +55,9 @@ namespace Game.Buildings
         }
 
         private async void StudyButton_Click(object sender, RoutedEventArgs e)
-        {
+        {            
+            player.PTime--;
+            player.RoundCheck();
             player.PEducation += 1;
             if (player.PEducation == 10)
             {

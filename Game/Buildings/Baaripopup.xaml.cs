@@ -20,7 +20,7 @@ namespace Game.Buildings
 {
     public sealed partial class Baaripopup : UserControl
     {
-        Player.Player1 player = new Player.Player1();
+        Player.Player1 player;
 
         //Hinnat
         int beer = 20;
@@ -36,6 +36,7 @@ namespace Game.Buildings
         public Baaripopup()
         {
             this.InitializeComponent();
+            player = (App.Current as App).player;
         }
 
         private async void BeerButton_Click(object sender, RoutedEventArgs e)
@@ -44,18 +45,18 @@ namespace Game.Buildings
             player.Buy(beer, time);
             player.PHappiness++;
             player.PDrink++;           
-            player.RoundCheck();
+           
 
-            if (player.PDrink > 10)
-            {
-                player.PTime = 10;
+            if (player.PDrink == 4)
+            {                
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You are getting too drunk! Bartender wont serve for you anymore and you are thrown out of the Bar.");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
                 
               }
-          
+            player.RoundCheck();
+
         }
 
         private void JalluButton_Click(object sender, RoutedEventArgs e)
