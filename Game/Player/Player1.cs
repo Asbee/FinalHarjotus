@@ -28,7 +28,10 @@ namespace Game.Player
         public int PHappiness {  get; set; }   
         public int PTime { get; set; }
         public int PEducation { get; set; }
-
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            Debug.WriteLine("The '" + command.Label + "' command has been selected.");
+        }
         public Player1()
         {           
             PMoney = 200;
@@ -59,10 +62,14 @@ namespace Game.Player
             PHappiness += relax;
             PTime -= time;
         }
-        public void RoundCheck()
+        public async void RoundCheck()
         {
            if(PTime == 0)
             {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Week is over! Next player, get ready!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
                 NewRound();
             }
         }
