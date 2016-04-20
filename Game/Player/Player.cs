@@ -11,11 +11,15 @@ using System.Runtime.CompilerServices;
 
 namespace Game.Player
 {
-    public class Player1 : INotifyPropertyChanged
+    public class Player : INotifyPropertyChanged
     {
         MediaElement media;
 
         public event PropertyChangedEventHandler PropertyChanged;
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            Debug.WriteLine("The '" + command.Label + "' command has been selected.");
+        }
 
         public bool MarketWork { get; set; }
         public bool UniversityWork { get; set; }
@@ -32,7 +36,9 @@ namespace Game.Player
         private int pmoney;
         public int PMoney
         { get
-            { return pmoney; }
+            {  
+                return pmoney;
+            }
             set
             {
                 pmoney = value;
@@ -46,7 +52,7 @@ namespace Game.Player
                 return pscore;
             }
             set
-            {
+            {                
                 pscore = value;
                 RaisePropertyChanged();
             }
@@ -66,14 +72,9 @@ namespace Game.Player
             }
         }
         public int PEducation { get; set; }
-        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
-        {
-            Debug.WriteLine("The '" + command.Label + "' command has been selected.");
-        }
-        public Player1()
+        public Player()
         {           
-            PMoney = 200;
-          
+            PMoney = 200;          
             PHappiness = 0;
             PEducation = 0;
             PTime = 10;

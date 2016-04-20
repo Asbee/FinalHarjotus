@@ -19,7 +19,7 @@ namespace Game.Buildings
 {
     public sealed partial class Market : UserControl
     {
-        Player.Player1 player;
+        Player.Player player;
         Marketpopup marketpop;
 
         //Aika ja Työ arvot

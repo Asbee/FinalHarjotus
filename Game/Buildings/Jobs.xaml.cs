@@ -22,7 +22,7 @@ namespace Game.Buildings
 {
     public sealed partial class Jobs : UserControl
     {
-        Player1 player;
+        Player.Player player;
         JobsPopup jobspop;
 
 

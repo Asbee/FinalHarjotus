@@ -24,7 +24,7 @@ namespace Game.Player
     {
         private MainPage page;
 
-        public Player1 player { get; set; }
+        public Player player { get; set; }
         
         public ScorePopup(MainPage page)
         {

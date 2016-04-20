@@ -20,7 +20,7 @@ namespace Game.Buildings
 {
     public sealed partial class Baaripopup : UserControl
     {
-        Player.Player1 player;
+        Player.Player player;
 
         //Hinnat
         int beer = 20;

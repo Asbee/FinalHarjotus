@@ -23,7 +23,7 @@ namespace Game.Buildings
     public sealed partial class Burger : UserControl
     {
         BurgerPopup burgerpop;
-        Player1 player;
+        Player.Player player;
     
         public Burger()
         {

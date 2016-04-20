@@ -19,7 +19,7 @@ namespace Game.Buildings
 {
     public sealed partial class JobsPopup : UserControl
     {
-        Player.Player1 player;       
+        Player.Player player;       
          
         public JobsPopup()
         {

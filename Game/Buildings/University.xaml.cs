@@ -19,7 +19,7 @@ namespace Game.Buildings
 {
     public sealed partial class University : UserControl
     {
-        Player.Player1 player;
+        Player.Player player;
         int work = 200;
         int time = 1;
 

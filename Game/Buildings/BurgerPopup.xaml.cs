@@ -19,8 +19,8 @@ using Windows.UI.Xaml.Navigation;
 namespace Game.Buildings
 {
     public sealed partial class BurgerPopup : UserControl
-    {  
-        Player1 player;
+    {
+        Player.Player player;
         //Items value
         int burgerointi = 20;
         int Matto = 50;

@@ -21,7 +21,7 @@ namespace Game.Buildings
 {
     public sealed partial class House : UserControl
     {
-        Player1 player;
+        Player.Player player;
         
         int Happiness = 15;
         int time = 5;

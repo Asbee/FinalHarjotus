@@ -24,7 +24,9 @@ namespace Game
     /// </summary>
     sealed partial class App : Application
     {
-        public Player1 player = new Player1();
+        public Player.Player player = new Player.Player();
+        public Player.Player player2 = new Player.Player();
+        public bool ActivePlayer;
         
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

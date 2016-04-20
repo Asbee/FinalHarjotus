@@ -19,7 +19,7 @@ namespace Game.Buildings
 {
     public sealed partial class Baari : UserControl
     {
-        Player.Player1 player;
+        Player.Player player;
         Baaripopup baaripop;
         //Aika ja Työ arvot
         

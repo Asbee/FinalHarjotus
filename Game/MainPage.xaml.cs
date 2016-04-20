@@ -30,7 +30,7 @@ namespace Game
         University university;
         Market market;
         Jobs jobs1;
-        Player1 player;
+        Player.Player player;
         Baari baari;
         ScorePopup Score;
 
