@@ -40,26 +40,23 @@ namespace Game.Buildings
 
         private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(burgerointi);
+            player.Buy(burgerointi, 0);
             player.RoundCheck();
             player.PFood = true;
-            player.CashSound();
         }
 
         private void RanutButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(Ranut);
+            player.Buy(Ranut, 0);
             player.RoundCheck();
             player.PFood = true;
-            player.CashSound();
         }
 
         private void MattoButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(Matto);
+            player.Buy(Matto, 0);
             player.RoundCheck();
             player.PFood = true;
-            player.CashSound();
         }
     }
 }

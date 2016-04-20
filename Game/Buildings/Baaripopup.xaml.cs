@@ -40,10 +40,9 @@ namespace Game.Buildings
 
         private async void BeerButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(beer);
+            player.Buy(beer, time);
             player.PHappiness++;
-            player.PDrink++;
-            player.PTime--;
+            player.PDrink++;           
             player.RoundCheck();
 
             if (player.PDrink > 10)
@@ -60,16 +59,18 @@ namespace Game.Buildings
 
         private void JalluButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(jallu);
+            player.Buy(jallu, time);
             player.PHappiness++;
             player.PDrink++;
+            player.RoundCheck();
         }
 
         private void WineButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(wine);
+            player.Buy(wine, time);
             player.PHappiness++;
             player.PDrink++;
+            player.RoundCheck();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

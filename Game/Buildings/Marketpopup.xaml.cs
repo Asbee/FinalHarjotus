@@ -24,7 +24,7 @@ namespace Game.Buildings
 
         //Hinnat
         int pinaatti = 20;
-        int banaani = 5;
+        int banaani = 10;
         int makarooni = 15;
 
         public Marketpopup()
@@ -35,19 +35,19 @@ namespace Game.Buildings
 
         private void BanaaniButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(banaani);
+            player.Buy(banaani, 0);
             player.RoundCheck();
         }
 
         private void PinaattiButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(pinaatti);
+            player.Buy(pinaatti, 0);
             player.RoundCheck();
         }
 
         private void MakaroniButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Buy(makarooni);
+            player.Buy(makarooni, 0);
             player.RoundCheck();
         }
 
