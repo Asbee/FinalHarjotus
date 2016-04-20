@@ -43,6 +43,7 @@ namespace Game.Buildings
             player.Buy(burgerointi);
             player.RoundCheck();
             player.PFood = true;
+            player.CashSound();
         }
 
         private void RanutButton_Click(object sender, RoutedEventArgs e)
@@ -50,6 +51,7 @@ namespace Game.Buildings
             player.Buy(Ranut);
             player.RoundCheck();
             player.PFood = true;
+            player.CashSound();
         }
 
         private void MattoButton_Click(object sender, RoutedEventArgs e)
@@ -57,6 +59,7 @@ namespace Game.Buildings
             player.Buy(Matto);
             player.RoundCheck();
             player.PFood = true;
+            player.CashSound();
         }
     }
 }

@@ -151,10 +151,12 @@
   <ItemGroup>
     <Content Include="Assets\baari.jpg" />
     <Content Include="Assets\Background.png" />
+    <Content Include="Assets\CashRegister.wav" />
     <Content Include="Assets\clerk.jpg" />
     <Content Include="Assets\House.jpg" />
     <Content Include="Assets\jobs.jpg" />
     <Content Include="Assets\Market.jpg" />
+    <Content Include="Assets\Rooster.wav" />
     <Content Include="Assets\Scholar.jpg" />
     <Content Include="Assets\MainTheme.wav" />
     <Content Include="Properties\Default.rd.xml" />

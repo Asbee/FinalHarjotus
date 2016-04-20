@@ -36,12 +36,12 @@ namespace Game.MainMenu
             ApplicationView.PreferredLaunchViewSize = new Size { Height = 550, Width = 400 };
 
 
-            LoadAudio();
+           MainMenuAudio();
             
             
         }
 
-        public async void LoadAudio()
+       public async void MainMenuAudio()
         {
 
 
