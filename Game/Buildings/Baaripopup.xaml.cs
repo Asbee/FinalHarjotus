@@ -23,9 +23,10 @@ namespace Game.Buildings
         Player.Player1 player = new Player.Player1();
 
         //Hinnat
-        int beer = 5;
-        int jallu = 5;
-        int wine = 6;
+        int beer = 20;
+        int jallu = 35;
+        int wine = 50;
+        int time = 1;
 
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
         {
@@ -42,6 +43,8 @@ namespace Game.Buildings
             player.Buy(beer);
             player.PHappiness++;
             player.PDrink++;
+            player.PTime--;
+            player.RoundCheck();
 
             if (player.PDrink > 10)
             {

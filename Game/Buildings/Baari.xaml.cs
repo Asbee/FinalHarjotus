@@ -25,8 +25,8 @@ namespace Game.Buildings
 
         //Aika ja Työ arvot
         
-        int work = 15;
-        int time = 10;
+        int work = 45;
+        int time = 1;
 
 
 
@@ -51,12 +51,15 @@ namespace Game.Buildings
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
             Kapakka.Children.Add(baaripop);
+            
+            player.RoundCheck();
         }
         private async void WorkButton_Click(object sender, RoutedEventArgs e)
         {
             if (player.BarWork == true)
             {
                 player.Work(work, time);
+                player.RoundCheck();
             }
             else
             {

@@ -27,7 +27,7 @@ namespace Game.Buildings
 
 
         // Arvot
-        int work = 30;
+        int work = 145;
         int time = 1;
 
         

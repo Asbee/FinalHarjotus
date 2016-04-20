@@ -37,7 +37,7 @@ namespace Game.Buildings
         }
 
         //Time and work values
-        int work = 20;
+        int work = 30;
         int time = 1;
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

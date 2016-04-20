@@ -20,8 +20,8 @@ namespace Game.Buildings
     public sealed partial class University : UserControl
     {
         Player.Player1 player;
-        int work = 20;
-        int time = 10;
+        int work = 200;
+        int time = 1;
 
         public University()
         {
@@ -42,7 +42,8 @@ namespace Game.Buildings
         {
             if (player.UniversityWork == true)
             {
-                player.Work(work, time);               
+                player.Work(work, time);
+                player.RoundCheck();               
             }
             else
             {
@@ -56,14 +57,14 @@ namespace Game.Buildings
         private async void StudyButton_Click(object sender, RoutedEventArgs e)
         {
             player.PEducation += 1;
-            if (player.PEducation == 5)
+            if (player.PEducation == 10)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered elementry school");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            if (player.PEducation == 10)
+            if (player.PEducation == 20)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered hight school");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",

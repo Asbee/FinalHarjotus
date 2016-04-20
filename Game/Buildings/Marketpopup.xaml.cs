@@ -36,16 +36,19 @@ namespace Game.Buildings
         private void BanaaniButton_Click(object sender, RoutedEventArgs e)
         {
             player.Buy(banaani);
+            player.RoundCheck();
         }
 
         private void PinaattiButton_Click(object sender, RoutedEventArgs e)
         {
             player.Buy(pinaatti);
+            player.RoundCheck();
         }
 
         private void MakaroniButton_Click(object sender, RoutedEventArgs e)
         {
             player.Buy(makarooni);
+            player.RoundCheck();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

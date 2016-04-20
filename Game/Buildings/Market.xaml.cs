@@ -23,8 +23,8 @@ namespace Game.Buildings
         Marketpopup marketpop;
 
         //Aika ja Työ arvot
-        int work = 15;
-        int time = 10;
+        int work = 85;
+        int time = 1;
         
         public Market()
         {
