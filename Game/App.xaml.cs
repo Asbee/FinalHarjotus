@@ -25,7 +25,6 @@ namespace Game
     sealed partial class App : Application
     {
         public Player1 player = new Player1();
-        public MediaElement media = new MediaElement();
         
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -39,7 +38,6 @@ namespace Game
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
-        
 
 
         /// <summary>
@@ -49,15 +47,7 @@ namespace Game
         /// <param name="e">Details about the launch request and process.</param>
         /// 
 
-        public async void LoadAudio()
-        {                        
-            media = new MediaElement();
-            media.AutoPlay = false;
-            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
-            StorageFile file = await folder.GetFileAsync("MainTheme.wav");
-            var stream = await file.OpenAsync(FileAccessMode.Read);
-            media.SetSource(stream, file.ContentType);
-        }
+        
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 

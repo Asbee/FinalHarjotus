@@ -14,7 +14,7 @@ namespace Game.Player
         public bool BurgerWork { get; set; }
         public bool JobsWork { get; set; }
         public bool BarWork { get; set; }
-
+        public int PDrink { get; set; }
       
         public string PName { get; set; }
         public bool PFood { get; set; }
@@ -31,15 +31,12 @@ namespace Game.Player
             PMoney = 200;
             PScore = 0;
             PHappiness = 0;
-            PEducation = 1;
-            PTime = 3;
+            PEducation = 0;
+            PTime = 10;
+            PDrink = 0;
         }
 
         //Metodit
-        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
-        {
-            Debug.WriteLine("The '" + command.Label + "' command has been selected.");
-        }
         public void Work(int value, int time)
         {
             PMoney += value;
@@ -48,45 +45,20 @@ namespace Game.Player
         public void Buy(int value)
         {
             PMoney -= value;
-            PTime--;
         }
         public void Education ()
         {
             PEducation++;
-            PTime--;
         }
         public void Relax(int relax, int time)
         {
             PHappiness += relax;
-            PTime--;
+            PTime -= time;
         }
         public void Clock()
         {
            
-        }
-        public void NewRound()
-        {
-            if (PFood == true)
-            {
-                PTime = 10;
-                PFood = false;
-            }
-            else
-            {
-                PTime = 8;
-            }
 
-        }
-        public async void RoundCheck()
-        {
-         if (PTime == 0)
-            {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("This week is over, next player get ready!");
-                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
-                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
-                await messageDialog.ShowAsync();
-                NewRound();
-            }   
         }
 
     }
