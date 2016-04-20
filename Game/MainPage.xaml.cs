@@ -32,11 +32,13 @@ namespace Game
         Jobs jobs1;
         Player1 player;
         Baari baari;
+        ScorePopup Score;
 
         public MainPage()
         {
             this.InitializeComponent();
             ApplicationView.GetForCurrentView().TryResizeView(new Size { Width = 1250, Height = 600 });
+
             burger = new Burger();
             house = new House();
             university = new University();
@@ -44,6 +46,7 @@ namespace Game
             jobs1 = new Jobs();
             player =(App.Current as App).player;
             baari = new Baari();
+            
         }                       
 
         private void Burger_Click(object sender, RoutedEventArgs e)
@@ -54,6 +57,11 @@ namespace Game
         private void House_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(house);
+        }
+
+        public void close()
+        {
+            MyGrid.Children.Remove(Score);
         }
 
         private void University_Click(object sender, RoutedEventArgs e)
@@ -74,6 +82,12 @@ namespace Game
         private void Baari_Click(object sender, RoutedEventArgs e)
         {
             MyGrid.Children.Add(baari);
+        }
+
+        private void ScoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            Score = new ScorePopup(this);
+            MyGrid.Children.Add(Score);
         }
     }
 }

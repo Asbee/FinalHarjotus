@@ -35,14 +35,24 @@ namespace Game.MainMenu
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             ApplicationView.PreferredLaunchViewSize = new Size { Height = 550, Width = 400 };
 
-            media = (App.Current as App).media;
-            
+
+            LoadAudio();
             
             
         }
 
-       
-        
+        public async void LoadAudio()
+        {
+
+
+            media = new MediaElement();
+            media.AutoPlay = true;
+            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            StorageFile file = await folder.GetFileAsync("MainTheme.wav");
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            media.SetSource(stream, file.ContentType);
+        }
+
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {

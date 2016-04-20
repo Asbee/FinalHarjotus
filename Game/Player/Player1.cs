@@ -31,7 +31,7 @@ namespace Game.Player
             PMoney = 200;
             PScore = 0;
             PHappiness = 0;
-            PEducation = 1;
+            PEducation = 0;
             PTime = 10;
         }
 
