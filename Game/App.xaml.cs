@@ -26,6 +26,7 @@ namespace Game
     {
         public Player1 player = new Player1();
         public MediaElement media = new MediaElement();
+        
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -38,6 +39,7 @@ namespace Game
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+        
 
 
         /// <summary>
@@ -48,9 +50,7 @@ namespace Game
         /// 
 
         public async void LoadAudio()
-        {
-
-
+        {                        
             media = new MediaElement();
             media.AutoPlay = false;
             StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");

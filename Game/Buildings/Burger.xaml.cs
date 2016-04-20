@@ -38,7 +38,7 @@ namespace Game.Buildings
 
         //Time and work values
         int work = 20;
-        int time = 10;
+        int time = 1;
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -50,6 +50,7 @@ namespace Game.Buildings
             if (player.BurgerWork == true)
             {
                 player.Work(work, time);
+                player.RoundCheck();
             }
             else
             {
@@ -59,8 +60,6 @@ namespace Game.Buildings
                 await messageDialog.ShowAsync();
             }
         }
-
-
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {

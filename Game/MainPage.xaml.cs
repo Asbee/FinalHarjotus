@@ -44,7 +44,7 @@ namespace Game
             jobs1 = new Jobs();
             player =(App.Current as App).player;
             baari = new Baari();
-        }                       
+        } 
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
@@ -75,5 +75,7 @@ namespace Game
         {
             MyGrid.Children.Add(baari);
         }
+
+       
     }
 }

@@ -42,7 +42,7 @@ namespace Game.Buildings
             if (player.BurgerWork == true)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You have a job here already! No rise for you!");
-                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("OK",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
@@ -54,7 +54,7 @@ namespace Game.Buildings
                 player.JobsWork = false;
                 player.BarWork = false;
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Congratulations! You're hired!");
-                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("OK",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }   

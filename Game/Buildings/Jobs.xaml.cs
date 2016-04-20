@@ -28,7 +28,7 @@ namespace Game.Buildings
 
         // Arvot
         int work = 30;
-        int time = 15;
+        int time = 1;
 
         
 
@@ -64,7 +64,9 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
+            player.RoundCheck();
         }
+        
 
         private void GetJob_Click(object sender, RoutedEventArgs e)
         {

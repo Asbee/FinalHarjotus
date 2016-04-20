@@ -32,10 +32,14 @@ namespace Game.Player
             PScore = 0;
             PHappiness = 0;
             PEducation = 1;
-            PTime = 10;
+            PTime = 3;
         }
 
         //Metodit
+        private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
+        {
+            Debug.WriteLine("The '" + command.Label + "' command has been selected.");
+        }
         public void Work(int value, int time)
         {
             PMoney += value;
@@ -44,20 +48,45 @@ namespace Game.Player
         public void Buy(int value)
         {
             PMoney -= value;
+            PTime--;
         }
         public void Education ()
         {
             PEducation++;
+            PTime--;
         }
         public void Relax(int relax, int time)
         {
             PHappiness += relax;
-            PTime -= time;
+            PTime--;
         }
         public void Clock()
         {
            
+        }
+        public void NewRound()
+        {
+            if (PFood == true)
+            {
+                PTime = 10;
+                PFood = false;
+            }
+            else
+            {
+                PTime = 8;
+            }
 
+        }
+        public async void RoundCheck()
+        {
+         if (PTime == 0)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("This week is over, next player get ready!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+                NewRound();
+            }   
         }
 
     }
