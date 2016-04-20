@@ -56,6 +56,7 @@ namespace Game.Buildings
             if (player.JobsWork == true)
             {
                 player.Work(work, time);
+                player.CashSound();
             }
             else
             {

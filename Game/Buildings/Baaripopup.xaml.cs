@@ -40,6 +40,7 @@ namespace Game.Buildings
 
         private async void BeerButton_Click(object sender, RoutedEventArgs e)
         {
+            player.CashSound();
             player.Buy(beer, time);
             player.PHappiness++;
             player.PDrink++;           
@@ -59,6 +60,7 @@ namespace Game.Buildings
 
         private void JalluButton_Click(object sender, RoutedEventArgs e)
         {
+            player.CashSound();
             player.Buy(jallu, time);
             player.PHappiness++;
             player.PDrink++;
@@ -67,6 +69,7 @@ namespace Game.Buildings
 
         private void WineButton_Click(object sender, RoutedEventArgs e)
         {
+            player.CashSound();
             player.Buy(wine, time);
             player.PHappiness++;
             player.PDrink++;

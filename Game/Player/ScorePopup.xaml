@@ -30,6 +30,7 @@
         </Slider>
         <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Margin="333,20,0,0" VerticalAlignment="Top" Height="30" Width="57" Click="CloseButton_Click"/>
         <TextBlock x:Name="EducaitonBlock" HorizontalAlignment="Left" Margin="191,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+        <TextBlock x:Name="ScoreBlock" HorizontalAlignment="Left" Margin="288,249,0,0" TextWrapping="Wrap" Text="{x:Bind player.Score }" VerticalAlignment="Top" Height="16" Width="40" RenderTransformOrigin="0.648,0.196"/>
 
     </Grid>
 </UserControl>

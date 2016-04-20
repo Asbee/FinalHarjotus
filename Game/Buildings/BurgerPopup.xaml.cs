@@ -40,6 +40,7 @@ namespace Game.Buildings
 
         private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
+            player.CashSound();
             player.Buy(burgerointi, 0);
             player.RoundCheck();
             player.PFood = true;
@@ -47,6 +48,7 @@ namespace Game.Buildings
 
         private void RanutButton_Click(object sender, RoutedEventArgs e)
         {
+            player.CashSound();
             player.Buy(Ranut, 0);
             player.RoundCheck();
             player.PFood = true;
@@ -54,6 +56,7 @@ namespace Game.Buildings
 
         private void MattoButton_Click(object sender, RoutedEventArgs e)
         {
+            player.CashSound();
             player.Buy(Matto, 0);
             player.RoundCheck();
             player.PFood = true;
