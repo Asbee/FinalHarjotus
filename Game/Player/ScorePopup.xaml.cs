@@ -30,7 +30,7 @@ namespace Game.Player
             this.page = page;
             EducationSlider.Value = (App.Current as App).player.PEducation;
             HappySlider.Value = (App.Current as App).player.PHappiness;
-            MoneySlider.Value = (App.Current as App).player.PScore;
+            //MoneySlider.Value = (App.Current as App).player.PScore;
             
             
             

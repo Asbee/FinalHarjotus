@@ -29,7 +29,16 @@ namespace Game.Player
         public string PItems { get; set; }
 
         private int pscore { get; set; }
-        public int PMoney { get; set; }
+        private int pmoney;
+        public int PMoney
+        { get
+            { return pmoney; }
+            set
+            {
+                pmoney = value;
+                RaisePropertyChanged();
+            }
+        }
         public int Score
         {
             get
@@ -42,8 +51,20 @@ namespace Game.Player
                 RaisePropertyChanged();
             }
         }
-        public int PHappiness {  get; set; }   
-        public int PTime { get; set; }
+        public int PHappiness {  get; set; }
+        private int ptime;  
+        public int PTime
+        {
+            get
+            {
+                return ptime;
+            }
+            set
+            {
+                ptime = value;
+                RaisePropertyChanged();
+            }
+        }
         public int PEducation { get; set; }
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
         {
@@ -52,7 +73,7 @@ namespace Game.Player
         public Player1()
         {           
             PMoney = 200;
-            PScore = 0;
+          
             PHappiness = 0;
             PEducation = 0;
             PTime = 10;

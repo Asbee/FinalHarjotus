@@ -21,15 +21,10 @@ namespace Game.Buildings
     {
         Player.Player1 player;
         Baaripopup baaripop;
-
-
         //Aika ja Työ arvot
         
         int work = 45;
         int time = 1;
-
-
-
         public Baari()
         {
             {
@@ -50,8 +45,7 @@ namespace Game.Buildings
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            Kapakka.Children.Add(baaripop);
-            
+            Kapakka.Children.Add(baaripop);            
             player.RoundCheck();
         }
         private async void WorkButton_Click(object sender, RoutedEventArgs e)
