@@ -43,7 +43,8 @@ namespace Game.Buildings
             if (player.UniversityWork == true)
             {
                 player.Work(work, time);
-                player.RoundCheck();               
+                player.RoundCheck();
+                player.CashSound();              
             }
             else
             {
@@ -56,6 +57,7 @@ namespace Game.Buildings
 
         private async void StudyButton_Click(object sender, RoutedEventArgs e)
         {
+            player.StudySound();
             player.PTime--;
             player.RoundCheck();
             player.PEducation += 1;

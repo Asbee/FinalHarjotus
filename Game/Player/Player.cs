@@ -117,17 +117,21 @@ namespace Game.Player
         }
         public async void RoundCheck()
         {
-           if(PTime == 0)
+            
+            if (PTime == 0)
             {
+                
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Week is over! Next player, get ready!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("OK",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
+                RoundEndSound();
                 NewRound();
             }
         }
         public async void Winner()
         {
+            WinnerSound();
             var messageDialog = new Windows.UI.Popups.MessageDialog("YOU WON!!!!");
             messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Start over!",
             new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
@@ -136,7 +140,8 @@ namespace Game.Player
                    
         }
         public async void NewRound()
-        {                            
+        {   
+                                     
             if (PFood == true && PDrink <= 4)
             {               
                 PTime = 10;                
@@ -173,7 +178,7 @@ namespace Game.Player
             PDrink = 0;
         }
 
-        //Sound Files
+        //Sound Method
         public async void CashSound()
         {
             media = new MediaElement();
@@ -189,6 +194,24 @@ namespace Game.Player
             media.AutoPlay = true;
             StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
             StorageFile file = await folder.GetFileAsync("Rooster.wav");
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            media.SetSource(stream, file.ContentType);
+        }
+        public async void StudySound()
+        {
+            media = new MediaElement();
+            media.AutoPlay = true;
+            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            StorageFile file = await folder.GetFileAsync("StudySound.wav");
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            media.SetSource(stream, file.ContentType);
+        }
+        public async void WinnerSound()
+        {
+            media = new MediaElement();
+            media.AutoPlay = true;
+            StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            StorageFile file = await folder.GetFileAsync("WinnerSound.wav");
             var stream = await file.OpenAsync(FileAccessMode.Read);
             media.SetSource(stream, file.ContentType);
         }

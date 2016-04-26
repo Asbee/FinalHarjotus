@@ -159,6 +159,8 @@
     <Content Include="Assets\Rooster.wav" />
     <Content Include="Assets\Scholar.jpg" />
     <Content Include="Assets\MainTheme.wav" />
+    <Content Include="Assets\StudySound.wav" />
+    <Content Include="Assets\WinnerSound.wav" />
     <Content Include="Assets\WoodScore.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
