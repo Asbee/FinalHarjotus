@@ -40,6 +40,7 @@ namespace Game.Buildings
                 player.CashSound();
                 player.Buy(banaani, 0);
                 player.RoundCheck();
+                player.PFood = true;
             }
             else
             {
@@ -54,6 +55,7 @@ namespace Game.Buildings
                 player.CashSound();
                 player.Buy(pinaatti, 0);
                 player.RoundCheck();
+                player.PFood = true;
             }
             else
             {
@@ -68,6 +70,7 @@ namespace Game.Buildings
                 player.CashSound();
                 player.Buy(makarooni, 0);
                 player.RoundCheck();
+                player.PFood = true;
             }
             else
             {

@@ -30,8 +30,6 @@ namespace Game.Buildings
         int work = 145;
         int time = 1;
 
-        
-
         public Jobs()
         {
             this.InitializeComponent();
@@ -56,7 +54,7 @@ namespace Game.Buildings
             if (player.JobsWork == true)
             {
                 player.Work(work, time);
-                player.CashSound();
+                player.CashSound();                
             }
             else
             {

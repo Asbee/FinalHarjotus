@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.ViewManagement;
+using Windows.ApplicationModel.Core;
+using Windows.Foundation;
+using Windows.UI.Xaml;
 using System.Diagnostics;
 using Windows.UI.Xaml.Controls;
 using Windows.Storage;
@@ -11,9 +15,10 @@ using System.Runtime.CompilerServices;
 
 namespace Game.Player
 {
-    public class Player : INotifyPropertyChanged
+    public class Player : INotifyPropertyChanged 
     {
         MediaElement media;
+        MainMenu.MainMenu mainmenu;
        
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -85,7 +90,7 @@ namespace Game.Player
             PHappiness = 0;
             PEducation = 0;
             PTime = 10;
-            PDrink = 0;
+            PDrink = 0;            
         }
 
         //Metodit
@@ -127,14 +132,23 @@ namespace Game.Player
            if(PTime == 0)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Week is over! Next player, get ready!");
-                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("OK",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
                 NewRound();
             }
         }
+        public async void Winner()
+        {
+            var messageDialog = new Windows.UI.Popups.MessageDialog("YOU WON!!!!");
+            messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Start over!",
+            new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+            await messageDialog.ShowAsync();
+            (App.Current as App).GoMenu();
+                   
+        }
         public async void NewRound()
-        {                      
+        {                            
             if (PFood == true && PDrink <= 4)
             {               
                 PTime = 10;                
@@ -162,6 +176,10 @@ namespace Game.Player
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();                
+            }
+            if (PMoney >= 2000 && PEducation >= 30 && PHappiness >= 15)
+            {
+                Winner();
             }
             PFood = false;
             PDrink = 0;

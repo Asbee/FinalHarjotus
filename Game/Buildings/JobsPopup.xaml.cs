@@ -57,7 +57,9 @@ namespace Game.Buildings
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("OK",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
-            }   
+            }
+            player.PTime--;
+            player.RoundCheck(); 
         }
 
         private async void MarketButton_Click (object sender, RoutedEventArgs e)
@@ -89,6 +91,8 @@ namespace Game.Buildings
                     new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                     await messageDialog.ShowAsync();
              }
+            player.PTime--;
+            player.RoundCheck();
         }
 
         private async void University_Click (object sender, RoutedEventArgs e)
@@ -101,7 +105,7 @@ namespace Game.Buildings
                 await messageDialog.ShowAsync();
             }
 
-                if (player.UniversityWork == false && player.PEducation > 10)
+                if (player.UniversityWork == false && player.PEducation > 25)
             {
                 player.BurgerWork = false;
                 player.MarketWork = false;
@@ -113,13 +117,15 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            if (player.UniversityWork == false && player.PEducation <= 10)
+            if (player.UniversityWork == false && player.PEducation <= 25)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
+            player.PTime--;
+            player.RoundCheck();
 
         }
 
@@ -152,6 +158,8 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
+            player.PTime--;
+            player.RoundCheck();
         }
 
         private async void JobsW_Click(object sender, RoutedEventArgs e)
@@ -164,7 +172,7 @@ namespace Game.Buildings
                 await messageDialog.ShowAsync();
             }
 
-            if (player.JobsWork == false && player.PEducation > 3)
+            if (player.JobsWork == false && player.PEducation > 17)
             {
                 player.BurgerWork = false;
                 player.MarketWork = false;
@@ -176,13 +184,15 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            if (player.JobsWork == false && player.PEducation <= 3)
+            if (player.JobsWork == false && player.PEducation <= 17)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("You need to study more! Not enought experience! You don't know me!");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
+            player.PTime--;
+            player.RoundCheck();
         }
     }
 }

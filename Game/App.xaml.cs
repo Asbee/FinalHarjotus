@@ -26,12 +26,31 @@ namespace Game
     {
         public Player.Player player = new Player.Player();
         public Player.Player player2 = new Player.Player();
-        
+
+        public void GoMenu()
+        {
+            // get root frame (which show pages)
+            Frame rootFrame = Window.Current.Content as Frame;
+            // did we get it correctly
+            if (rootFrame == null) return;
+            // navigate back if possible
+            if (rootFrame.CanGoBack)
+            {
+                rootFrame.GoBack();
+            }
+            player.PMoney = 200;
+            player.PHappiness = 0;
+            player.PEducation = 0;
+            player.PTime = 10;
+            player.PDrink = 0;
+        }
         
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        /// 
+
         public App()
         {
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(

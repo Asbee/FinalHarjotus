@@ -56,6 +56,9 @@ namespace Game.Buildings
 
         private async void StudyButton_Click(object sender, RoutedEventArgs e)
         {
+            player.PTime--;
+            player.RoundCheck();
+            player.PEducation += 1;
             if (player.PEducation == 10)
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered college");
@@ -84,9 +87,7 @@ namespace Game.Buildings
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-            player.PTime--;
-            player.RoundCheck();
-            player.PEducation += 1;
+            
              
         }
     }

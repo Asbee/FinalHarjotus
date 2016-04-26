@@ -51,36 +51,48 @@ namespace Game
 
         private void Burger_Click(object sender, RoutedEventArgs e)
         {
+            player.RoundCheck();
+            player.PTime--;
             MyGrid.Children.Add(burger);
         }
 
         private void House_Click(object sender, RoutedEventArgs e)
         {
+            player.RoundCheck();
+            player.PTime--;
             MyGrid.Children.Add(house);
         }
 
         public void close()
-        {
+        {           
             MyGrid.Children.Remove(Score);
         }
 
         private void University_Click(object sender, RoutedEventArgs e)
         {
+            player.RoundCheck();
+            player.PTime--;
             MyGrid.Children.Add(university);
         }
 
         private void Market_Click(object sender, RoutedEventArgs e)
         {
+            player.RoundCheck();
+            player.PTime--;
             MyGrid.Children.Add(market);
         }
 
         private void Jobs_Click(object sender, RoutedEventArgs e)
         {
+            player.RoundCheck();
+            player.PTime--;
             MyGrid.Children.Add(jobs1);
         }
 
         private void Baari_Click(object sender, RoutedEventArgs e)
         {
+            player.RoundCheck();
+            player.PTime--;
             MyGrid.Children.Add(baari);
         }
 

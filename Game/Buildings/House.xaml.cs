@@ -23,9 +23,8 @@ namespace Game.Buildings
     {
         Player.Player player;
         
-        int Happiness = 15;
-        int time = 5;
-        
+        int Happiness = 2;
+        int time = 1;  
 
         public House()
         {
@@ -42,6 +41,7 @@ namespace Game.Buildings
         private void RelaxButton_Click(object sender, RoutedEventArgs e)
         {
             player.Relax(Happiness, time);
+            player.RoundCheck();
         }
     }
 }
