@@ -18,7 +18,6 @@ namespace Game.Player
     public class Player : INotifyPropertyChanged 
     {
         MediaElement media;
-        MainMenu.MainMenu mainmenu;
        
 
         public event PropertyChangedEventHandler PropertyChanged;
