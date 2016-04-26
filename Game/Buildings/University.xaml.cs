@@ -55,25 +55,39 @@ namespace Game.Buildings
         }
 
         private async void StudyButton_Click(object sender, RoutedEventArgs e)
-        {            
-            player.PTime--;
-            player.RoundCheck();
-            player.PEducation += 1;
+        {
             if (player.PEducation == 10)
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered elementry school");
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered college");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
             if (player.PEducation == 20)
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered hight school");
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered university");
                 messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
                 new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
                 await messageDialog.ShowAsync();
             }
-
+            if (player.PEducation == 30)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Congrats! You've mastered the universe!");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+            if (player.PEducation > 30)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("You already are the 'Master of the universe!' Go invent something.");
+                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+                await messageDialog.ShowAsync();
+            }
+            player.PTime--;
+            player.RoundCheck();
+            player.PEducation += 1;
+             
         }
     }
 }

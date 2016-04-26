@@ -33,7 +33,7 @@
         <Button x:Name="Market" Content="Market" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="839,189,0,0" Width="89" Height="129" Click="Market_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="Jobs" Content="Jobs" HorizontalAlignment="Left" Margin="769,216,0,0" VerticalAlignment="Top" Height="102" Click="Jobs_Click" UseSystemFocusVisuals="True"/>
         <TextBlock x:Name="ScoreBlock" HorizontalAlignment="Left" Margin="90,98,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button x:Name="BarButton" Content="Button" HorizontalAlignment="Left" Margin="214,189,0,0" VerticalAlignment="Top" Height="129" Width="33" Click="Baari_Click" Grid.Column="1"/>
+        <Button x:Name="BarButton" Content="Button" HorizontalAlignment="Left" Margin="163,189,0,0" VerticalAlignment="Top" Height="129" Width="47" Click="Baari_Click" Grid.Column="1"/>
         <Button x:Name="ScoreButton" Content="Score" HorizontalAlignment="Left" Margin="119,26,0,0" VerticalAlignment="Top" Height="54" Width="91" Grid.Column="1" Click="ScoreButton_Click"/>
         <StackPanel Orientation="Horizontal" Margin="0,43,0,-43">
             <TextBlock x:Name="textBlockMoney" Text="Money" />
