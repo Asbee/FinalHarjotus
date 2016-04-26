@@ -33,7 +33,6 @@ namespace Game.Player
         public bool PFood { get; set; }
         public string PItems { get; set; }
 
-        private int pscore { get; set; }
         private int pmoney;
         private int pmoneyMin = 0;
         public bool ActivePlayer { get; set; }
@@ -51,18 +50,7 @@ namespace Game.Player
                 }                
             }
         }
-        public int Score
-        {
-            get
-            {
-                return pscore;
-            }
-            set
-            {                
-                pscore = value;
-                RaisePropertyChanged();
-            }
-        }
+        
         public int PHappiness {  get; set; }
         private int ptime;  
         public int PTime
