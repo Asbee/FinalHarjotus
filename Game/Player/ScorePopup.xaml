@@ -15,7 +15,7 @@
     <Grid Background="Azure" x:Name="ScoreCanvas" >
         <Image Stretch="Fill"
                Source="/Assets/WoodScore.jpg"/>
-        <Slider x:Name="HappySlider" HorizontalAlignment="Left" Margin="-17.822,115.686,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="30" LargeChange="10">
+        <Slider x:Name="HappySlider" HorizontalAlignment="Left" Margin="-17.822,115.686,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="15" LargeChange="10">
             <Slider.RenderTransform>
                 <CompositeTransform Rotation="-90.524"/>
             </Slider.RenderTransform>
