@@ -13,24 +13,30 @@
     Height="300">
 
     <Grid Background="Azure" x:Name="ScoreCanvas" >
-        <Slider x:Name="HappySlider" HorizontalAlignment="Left" Margin="-17.822,115.686,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="15">
+        <Image Stretch="Fill"
+               Source="/Assets/WoodScore.jpg"/>
+        <Slider x:Name="HappySlider" HorizontalAlignment="Left" Margin="-17.822,115.686,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="15" LargeChange="10">
             <Slider.RenderTransform>
                 <CompositeTransform Rotation="-90.524"/>
             </Slider.RenderTransform>
         </Slider>
-        <Slider x:Name="EducationSlider" HorizontalAlignment="Left" Margin="104.115,115.61,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="15" TickFrequency="1" StepFrequency="0" LargeChange="0" Background="#66000000" Foreground="{x:Null}" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False">
+        <Slider x:Name="EducationSlider" HorizontalAlignment="Left" Margin="104.115,115.61,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="30" LargeChange="10">
             <Slider.RenderTransform>
                 <CompositeTransform Rotation="-90.524"/>
             </Slider.RenderTransform>
         </Slider>
-        <Slider x:Name="MoneySlider" HorizontalAlignment="Left" Margin="215.014,115.287,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="15">
+        <Slider x:Name="MoneySlider" HorizontalAlignment="Left" Margin="215.014,115.287,0,0" VerticalAlignment="Top" Width="185.02" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="2000">
             <Slider.RenderTransform>
                 <CompositeTransform Rotation="-90.524"/>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Margin="333,20,0,0" VerticalAlignment="Top" Height="30" Width="57" Click="CloseButton_Click"/>
-        <TextBlock x:Name="EducaitonBlock" HorizontalAlignment="Left" Margin="191,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
-        <TextBlock x:Name="ScoreBlock" HorizontalAlignment="Left" Margin="288,249,0,0" TextWrapping="Wrap" Text="{x:Bind player.Score }" VerticalAlignment="Top" Height="16" Width="40" RenderTransformOrigin="0.648,0.196"/>
+        <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Margin="333,10,0,0" VerticalAlignment="Top" Height="30" Width="57" Click="CloseButton_Click" Foreground="#FF1DCD45"/>
+        <TextBlock x:Name="EducaitonBlock" HorizontalAlignment="Left" Margin="190,249,0,-29" TextWrapping="Wrap" Text="{x:Bind player.PEducation}" VerticalAlignment="Top" Width="40" Foreground="#FF1DCD45"/>
+        <TextBlock x:Name="MoneyBlock" HorizontalAlignment="Left" Margin="295,249,0,0" TextWrapping="Wrap" Text="{x:Bind player.PMoney }" VerticalAlignment="Top" Height="16" Width="40" RenderTransformOrigin="0.648,0.196" Foreground="#FF1DCD45"/>
+        <TextBlock x:Name="HappinessBlock" HorizontalAlignment="Left" Margin="65,249,0,0" TextWrapping="Wrap" Text="{x:Bind player.PHappiness}" VerticalAlignment="Top" Foreground="#FF1DCD45"/>
+        <TextBlock x:Name="HappyBlock" HorizontalAlignment="Left" Margin="40,10,0,0" TextWrapping="Wrap" Text="Happiness" VerticalAlignment="Top" Foreground="#FF1DCD45"/>
+        <TextBlock x:Name="EduBlock" HorizontalAlignment="Left" Margin="165,10,0,0" TextWrapping="Wrap" Text="Education" VerticalAlignment="Top" Foreground="#FF1DCD45"/>
+        <TextBlock x:Name="MoneyBlocka" HorizontalAlignment="Left" Margin="282,10,0,0" TextWrapping="Wrap" Text="Money" VerticalAlignment="Top" Foreground="#FF1DCD45"/>
 
     </Grid>
 </UserControl>
