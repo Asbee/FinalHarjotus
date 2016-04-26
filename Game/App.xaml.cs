@@ -26,7 +26,7 @@ namespace Game
     {
         public Player.Player player = new Player.Player();
         public Player.Player player2 = new Player.Player();
-        public bool ActivePlayer;
+        
         
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

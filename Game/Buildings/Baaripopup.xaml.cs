@@ -23,9 +23,9 @@ namespace Game.Buildings
         Player.Player player;
 
         //Hinnat
-        int beer = 20;
-        int jallu = 35;
-        int wine = 50;
+        int beer = 5;
+        int jallu = 15;
+        int wine = 20;
         int time = 1;
 
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
@@ -39,42 +39,69 @@ namespace Game.Buildings
             player = (App.Current as App).player;
         }
 
-        private async void BeerButton_Click(object sender, RoutedEventArgs e)
+        private void BeerButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(beer, time);
-            player.PHappiness++;
-            player.PDrink++;           
-           
+            if (player.PMoney >= beer)
+            {
+                player.CashSound();
+                player.Buy(beer, time);
+                player.PHappiness++;
+                player.PDrink++;
+            }
+            else
+            {
+                player.NoBuy();
+            }
 
             if (player.PDrink == 4)
-            {                
-                var messageDialog = new Windows.UI.Popups.MessageDialog("You are getting too drunk! Bartender wont serve for you anymore and you are thrown out of the Bar.");
-                messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
-                new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
-                await messageDialog.ShowAsync();
-                
-              }
+            {
+                player.TooDrunk();
+            }
+
             player.RoundCheck();
 
         }
 
         private void JalluButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(jallu, time);
-            player.PHappiness++;
-            player.PDrink++;
-            player.RoundCheck();
+            if (player.PMoney >= jallu)
+            {
+                player.CashSound();
+                player.Buy(jallu, time);
+                player.PHappiness++;
+                player.PDrink++;
+                player.RoundCheck();
+            }
+            else
+            {
+                player.NoBuy();
+            }
+
+            if (player.PDrink == 4)
+            {
+                player.TooDrunk();
+            }
         }
 
         private void WineButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(wine, time);
-            player.PHappiness++;
-            player.PDrink++;
-            player.RoundCheck();
+            if (player.PMoney >= wine)
+            {
+                player.CashSound();
+                player.Buy(wine, time);
+                player.PHappiness++;
+                player.PDrink++;
+                player.RoundCheck();
+            }
+            else
+            {
+                player.NoBuy();
+            }
+
+            if (player.PDrink == 4)
+            {
+                player.TooDrunk();
+            }
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

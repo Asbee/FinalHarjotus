@@ -20,6 +20,7 @@ namespace Game.Buildings
     public sealed partial class Baari : UserControl
     {
         Player.Player player;
+        Player.Player player2;
         Baaripopup baaripop;
         //Aika ja Työ arvot
         
@@ -30,7 +31,8 @@ namespace Game.Buildings
             {
                 this.InitializeComponent();
                 player = (App.Current as App).player;
-               baaripop = new Baaripopup();
+                player2 = (App.Current as App).player;
+                baaripop = new Baaripopup();
             }
         }
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)

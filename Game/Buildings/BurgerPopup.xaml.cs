@@ -40,26 +40,45 @@ namespace Game.Buildings
 
         private void BurgeriButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
+            if (player.PMoney >= burgerointi)
+            { 
+                player.CashSound();
             player.Buy(burgerointi, 0);
             player.RoundCheck();
             player.PFood = true;
         }
+            else 
+            {
+                player.NoBuy();
+            }
+        }
 
         private void RanutButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(Ranut, 0);
-            player.RoundCheck();
-            player.PFood = true;
+            if (player.PMoney >= Ranut)
+            {
+                player.CashSound();
+                player.Buy(Ranut, 0);
+                player.RoundCheck();
+                player.PFood = true;
+            }
+            else
+            {
+                player.NoBuy();
+            }
         }
 
         private void MattoButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(Matto, 0);
-            player.RoundCheck();
-            player.PFood = true;
-        }
+            if (player.PMoney >= Matto)
+            {
+                player.CashSound();
+                player.Buy(Matto, 0);
+                player.RoundCheck();
+                player.PFood = true;
+            }
+            else
+            { player.NoBuy(); }
+                    }
     }
 }

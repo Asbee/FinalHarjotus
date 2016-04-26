@@ -23,9 +23,9 @@ namespace Game.Buildings
         Player.Player player;
 
         //Hinnat
-        int pinaatti = 20;
-        int banaani = 10;
-        int makarooni = 15;
+        int pinaatti = 15;
+        int banaani = 5;
+        int makarooni = 20;
 
         public Marketpopup()
         {
@@ -35,23 +35,44 @@ namespace Game.Buildings
 
         private void BanaaniButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(banaani, 0);
-            player.RoundCheck();
+            if (player.PMoney >= banaani)
+            {
+                player.CashSound();
+                player.Buy(banaani, 0);
+                player.RoundCheck();
+            }
+            else
+            {
+                player.NoBuy();
+            }
         }
 
         private void PinaattiButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(pinaatti, 0);
-            player.RoundCheck();
+            if (player.PMoney >= pinaatti)
+            {
+                player.CashSound();
+                player.Buy(pinaatti, 0);
+                player.RoundCheck();
+            }
+            else
+            {
+                player.NoBuy();
+            }
         }
 
         private void MakaroniButton_Click(object sender, RoutedEventArgs e)
         {
-            player.CashSound();
-            player.Buy(makarooni, 0);
-            player.RoundCheck();
+            if (player.PMoney >= makarooni)
+            {
+                player.CashSound();
+                player.Buy(makarooni, 0);
+                player.RoundCheck();
+            }
+            else
+            {
+                player.NoBuy();
+            }
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

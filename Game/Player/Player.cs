@@ -14,6 +14,7 @@ namespace Game.Player
     public class Player : INotifyPropertyChanged
     {
         MediaElement media;
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void CommandInvokedHandler(Windows.UI.Popups.IUICommand command)
@@ -34,6 +35,8 @@ namespace Game.Player
 
         private int pscore { get; set; }
         private int pmoney;
+        private int pmoneyMin = 0;
+        public bool ActivePlayer { get; set; }
         public int PMoney
         { get
             {  
@@ -41,8 +44,11 @@ namespace Game.Player
             }
             set
             {
-                pmoney = value;
-                RaisePropertyChanged();
+                if (value >= pmoneyMin)
+                {
+                    pmoney = value;
+                    RaisePropertyChanged();
+                }                
             }
         }
         public int Score
@@ -72,6 +78,7 @@ namespace Game.Player
             }
         }
         public int PEducation { get; set; }
+      
         public Player()
         {           
             PMoney = 200;          
@@ -91,6 +98,20 @@ namespace Game.Player
         {
             PMoney -= value;
             PTime -= time;
+        }
+        public async void NoBuy()
+        {
+            var messageDialog = new Windows.UI.Popups.MessageDialog("Not enough money!");
+            messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+            new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+            await messageDialog.ShowAsync();
+        }
+        public async void TooDrunk()
+        {
+            var messageDialog = new Windows.UI.Popups.MessageDialog("You are getting too drunk! Bartender wont serve for you anymore and you are thrown out of the Bar.");
+            messageDialog.Commands.Add(new Windows.UI.Popups.UICommand("Ok",
+            new Windows.UI.Popups.UICommandInvokedHandler(this.CommandInvokedHandler)));
+            await messageDialog.ShowAsync();
         }
         public void Education ()
         {
@@ -113,7 +134,7 @@ namespace Game.Player
             }
         }
         public async void NewRound()
-        {            
+        {                      
             if (PFood == true && PDrink <= 4)
             {               
                 PTime = 10;                
