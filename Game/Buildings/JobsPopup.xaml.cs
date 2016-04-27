@@ -15,6 +15,10 @@ using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
+// Copyright 2016, Aaro Lyytinen, Santtu Boman, Nicolas Liuhanen. All rights reserved
+// Version 1.2 
+// FastLaneGame
+
 namespace Game.Buildings
 {
     public sealed partial class JobsPopup : UserControl

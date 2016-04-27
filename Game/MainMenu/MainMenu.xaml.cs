@@ -18,12 +18,12 @@ using Windows.UI.Xaml.Navigation;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+// Copyright 2016, Aaro Lyytinen, Santtu Boman, Nicolas Liuhanen. All rights reserved
+// Version 1.2 
+// FastLaneGame
 
 namespace Game.MainMenu
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainMenu : Page
     {
         MediaElement media;
@@ -43,8 +43,6 @@ namespace Game.MainMenu
 
        public async void MainMenuAudio()
         {
-
-
             media = new MediaElement();
             media.AutoPlay = true;
             StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");

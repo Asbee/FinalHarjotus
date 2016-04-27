@@ -18,6 +18,11 @@ using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
+// Copyright 2016, Aaro Lyytinen, Santtu Boman, Nicolas Liuhanen. All rights reserved
+// Version 1.2 
+// FastLaneGame
+
+
 namespace Game
 {
     /// <summary>

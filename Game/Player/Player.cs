@@ -13,6 +13,10 @@ using Windows.Storage;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+// Copyright 2016, Aaro Lyytinen, Santtu Boman, Nicolas Liuhanen. All rights reserved
+// Version 1.2 
+// FastLaneGame
+
 namespace Game.Player
 {
     public class Player : INotifyPropertyChanged 
